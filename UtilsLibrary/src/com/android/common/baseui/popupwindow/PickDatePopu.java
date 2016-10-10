@@ -1,8 +1,5 @@
 package com.android.common.baseui.popupwindow;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import android.content.Context;
@@ -39,10 +36,6 @@ public class PickDatePopu extends PopupWindow {
      */
     private TextView closeTv,sureTv;
     private DatePicker datePicker;
-    
-    private Calendar calendar; // 通过Calendar获取系统时间
-    
-    private int initHour;
     
 	public PickDatePopu(Context context, OnDatePickedListener listener) {
 		super(context);
@@ -112,16 +105,16 @@ public class PickDatePopu extends PopupWindow {
 		return new int[]{wm.getDefaultDisplay().getWidth(), wm.getDefaultDisplay().getHeight()};
 	}
 	
-	private Date translateDateTime(String dateTime) {
-		SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		Date time = null;
-		try {
-			time = formatDate.parse(dateTime);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return time;
-	}
+//	private Date translateDateTime(String dateTime) {
+//		SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+//		Date time = null;
+//		try {
+//			time = formatDate.parse(dateTime);
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//		}
+//		return time;
+//	}
 	
     private void setListener(){
     	rootView.setOnClickListener(new View.OnClickListener() {

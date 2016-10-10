@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -60,7 +59,6 @@ public class SingleWheelPopu extends PopupWindow {
 	}
 	
 	private View initView(){
-		int[] screen = getScreenSize(mContext);
 		rootView = LayoutInflater.from(mContext).inflate(R.layout.utils_layout_popup_singleselect, null);
 		closeTv = (TextView) rootView.findViewById(R.id.utils_popup_close);
 		sureTv = (TextView) rootView.findViewById(R.id.utils_popup_sure);
@@ -84,11 +82,6 @@ public class SingleWheelPopu extends PopupWindow {
 	    this.setAnimationStyle(R.style.utils_popuwindowstyle); 
 	    setListener();
 		return rootView;
-	}
-	
-	private int[] getScreenSize(Context context) {
-		WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-		return new int[]{wm.getDefaultDisplay().getWidth(), wm.getDefaultDisplay().getHeight()};
 	}
 	
 	private void initData() {

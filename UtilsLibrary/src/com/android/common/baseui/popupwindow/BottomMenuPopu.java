@@ -22,7 +22,6 @@ import com.common.android.utilslibrary.R;
  */
 public class BottomMenuPopu extends PopupWindow implements OnClickListener {
 	private RelativeLayout outLayout;
-	private String[] menuStr;
 	private TextView menu1Text, menu2Text, menu3Text, menu4Text, cancel;
 
 	/**
@@ -32,7 +31,6 @@ public class BottomMenuPopu extends PopupWindow implements OnClickListener {
 	 */
 	public BottomMenuPopu(Activity activity, String[] menuStr) {
 		super(activity);
-		this.menuStr = menuStr;
 		View view = View.inflate(activity, R.layout.utils_layout_popup_menu, null);
 		
 		menu1Text = (TextView) view.findViewById(R.id.utils_popup_menu1);
