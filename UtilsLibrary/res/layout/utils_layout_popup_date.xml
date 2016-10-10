@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#40000000"
+    android:gravity="bottom" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" >
+
+        <TextView
+            android:id="@+id/utils_popup_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:text="@android:string/cancel"
+            android:textColor="@color/utils_text_black3"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/utils_popup_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:text="@android:string/ok"
+            android:textColor="@color/utils_text_black3"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/utils_popup_datetime_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/utils_popup_close"
+            android:background="@color/lines_color"/>
+
+        <LinearLayout
+            android:id="@+id/utils_popup_datetime_picker_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/utils_popup_datetime_line"
+            android:orientation="horizontal" >
+
+            <DatePicker
+		        android:id="@+id/utils_popup_date_picker"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center|center_vertical"
+		        android:calendarViewShown="false"
+		        android:layout_weight="1"/>
+            
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 白色 -->
+    <color name="utils_white">#FFFFFF</color>
+    <!-- 黑色 -->
+    <color name="utils_black">#000000</color>
+    <!-- 半透明 -->
+    <color name="utils_half_transparent">#55000000</color>
+    <!-- 全透明 -->
+    <color name="utils_transparent">#00000000</color>
+    <!-- 导航分割线 -->
+    <color name="utils_navigate_menu_bg_color">#F9F9F9</color>
+    <!-- 背景色（浅灰背景） 通用 -->
+    <color name="utils_background_colorfa">#fafafa</color>
+    <color name="utils_background_colorfd">#FDFDFE</color>
+    <!-- 黑色[主要用于标签性质的文字] -->
+    <color name="utils_text_black3">#333333</color>
+    <color name="utils_text_hint9">#999999</color>
+    <color name="utils_text_deep_black31">#313131</color>
+    <!-- 上下描边颜色   通用这个 -->
+    <color name="lines_color">#E3E3E3</color>
+    
+    <!-- 浅灰色 -->
+    <color name="light_gray">#818181</color>
+    <!-- 深灰色 -->
+    <color name="deep_gray">#4b4b4b</color>
+</resources>
