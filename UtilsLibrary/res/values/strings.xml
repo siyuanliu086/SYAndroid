@@ -60,8 +60,19 @@
     
     
     
+    <!-- 图片 -->
     <string name="utilslib_icon_common_nodata"></string>
 
+    <!-- 图片浏览 -->
     <string name="utilslib_viewpager_indicator">%1$d/%2$d</string>
     
+    <!-- 手势密码 -->
+    <string name="utilslib_gesturepass_pass2short">密码太短或太长，请重新绘制</string>
+    <string name="utilslib_gesturepass_drawagain">再次确认绘制</string>
+    <string name="utilslib_gesturepass_drawasuccess">设置成功</string>
+    <string name="utilslib_gesturepass_check_faile">两次绘制不匹配！</string>
+    <string name="utilslib_gesturepass_draw_succ">输入正确</string>
+    <string name="utilslib_gesturepass_draw_failed">输入错误</string>
+    <string name="utilslib_gesturepass_please_setting">请设置密码！</string>
+    <string name="utilslib_gesturepass_please_input">请输入密码！</string>
 </resources>
