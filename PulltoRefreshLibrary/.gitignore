@@ -1,0 +1,8 @@
+/bin
+/gen
+/build
+/.settings
+/proguard
+/.classpath
+/.project
+/project.properties
