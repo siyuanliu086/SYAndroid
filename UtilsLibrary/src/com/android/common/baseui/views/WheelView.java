@@ -1,4 +1,5 @@
 package com.android.common.baseui.views;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.common.android.utilslibrary.R;
+
 /**
  * @TiTle WheelView.java
  * @Package com.android.common.baseui.baseview
@@ -240,10 +242,10 @@ public class WheelView extends ScrollView {
             }
             if (position == i) {
             	itemView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
-                itemView.setTextColor(context.getResources().getColor(R.color.deep_gray));
+                itemView.setTextColor(context.getResources().getColor(R.color.utilslib_deep_gray));
             } else {
             	itemView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);
-                itemView.setTextColor(context.getResources().getColor(R.color.light_gray));
+                itemView.setTextColor(context.getResources().getColor(R.color.utilslib_light_gray));
             }
         }
     }
@@ -280,7 +282,7 @@ public class WheelView extends ScrollView {
 
         if (null == paint) {
             paint = new Paint();
-            paint.setColor(context.getResources().getColor(R.color.lines_color));
+            paint.setColor(context.getResources().getColor(R.color.utilslib_lines_color));
             paint.setStrokeWidth(dip2px(1f));
         }
 

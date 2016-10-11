@@ -59,7 +59,7 @@ public class SingleWheelPopu extends PopupWindow {
 	}
 	
 	private View initView(){
-		rootView = LayoutInflater.from(mContext).inflate(R.layout.utils_layout_popup_singleselect, null);
+		rootView = LayoutInflater.from(mContext).inflate(R.layout.utilslib_layout_popup_singleselect, null);
 		closeTv = (TextView) rootView.findViewById(R.id.utils_popup_close);
 		sureTv = (TextView) rootView.findViewById(R.id.utils_popup_sure);
 		mWheelView = (WheelView) rootView.findViewById(R.id.utils_popup_single_wheelview);
@@ -74,7 +74,7 @@ public class SingleWheelPopu extends PopupWindow {
 	    this.setFocusable(true); 
 	  
 	    // 实例化一个ColorDrawable颜色为半透明 
-	    ColorDrawable dw = new ColorDrawable(mContext.getResources().getColor(R.color.utils_half_transparent)); 
+	    ColorDrawable dw = new ColorDrawable(mContext.getResources().getColor(R.color.utilslib_half_transparent)); 
 	    // 设置弹出窗体的背景 
 	    this.setBackgroundDrawable(dw); 
 	  

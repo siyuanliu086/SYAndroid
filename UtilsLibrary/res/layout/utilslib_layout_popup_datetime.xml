@@ -18,7 +18,7 @@
             android:layout_alignParentTop="true"
             android:layout_margin="10dp"
             android:text="@android:string/cancel"
-            android:textColor="@color/utils_text_black3"
+            android:textColor="@color/utilslib_text_black3"
             android:textSize="16sp" />
 
         <TextView
@@ -29,7 +29,7 @@
             android:layout_alignParentTop="true"
             android:layout_margin="10dp"
             android:text="@android:string/ok"
-            android:textColor="@color/utils_text_black3"
+            android:textColor="@color/utilslib_text_black3"
             android:textSize="16sp" />
 
         <View
@@ -38,7 +38,7 @@
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
             android:layout_below="@id/utils_popup_close"
-            android:background="@color/lines_color"/>
+            android:background="@color/utilslib_lines_color" />
 
         <LinearLayout
             android:id="@+id/utils_popup_datetime_picker_layout"
@@ -50,11 +50,17 @@
 
             <DatePicker
 		        android:id="@+id/utils_popup_date_picker"
-		        android:layout_width="0dp"
+		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_gravity="center|center_vertical"
-		        android:calendarViewShown="false"
-		        android:layout_weight="1"/>
+		        android:calendarViewShown="false"/>
+		        
+            <TimePicker
+		        android:id="@+id/utils_popup_time_picker"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center|center_vertical"
+		        android:layout_marginLeft="20dp"/>
             
         </LinearLayout>
     </RelativeLayout>

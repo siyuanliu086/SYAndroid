@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">utils_library</string>
+    <string name="utilslib_app_name">utils_library</string>
     
     <string name="utils_common_net_unavaiable">网络连接不可用</string>
     <string name="utils_common_loading">正在加载</string>
@@ -10,6 +10,7 @@
     
     <string name="utils_common_video_download_failed">视频下载失败</string>
     <string name="utils_common_image_loadfaild">图片加载失败</string>
+    <string name="utils_common_error_downloadfile">附件打开失败!</string>
     <string name="utils_common_error_openfile">附件打开失败!</string>
     
     <string name="utils_common_media_video">视频</string>
@@ -36,25 +37,31 @@
     <string name="utils_user_vali_resend">重新发送</string>
     <string name="utils_user_vali_count_resend">%1s秒重新发送</string>
     <string name="utils_register_title">用户注册</string>
-    <string name="utils_userinfo_title">补全信息</string>
-    <string name="utils_register_complete">注 册</string>
-    <string name="utils_check_phonenumber">请输入正确手机号码！</string>
-    <string name="utils_regist_userinfo_vali_null">请输入验证码！</string>
-    <string name="utils_valicode_error">获取校验验证码失败</string>
-    <string name="utils_register_check_password">确认密码</string>
-    <string name="utils_register_commit">提交</string>
-    <string name="utils_password_different">输入的两次密码不一致！</string>
-    <string name="utils_search_hint">搜索</string>
+    <string name="utilslib_userinfo_title">补全信息</string>
+    <string name="utilslib_register_complete">注 册</string>
+    <string name="utilslib_check_phonenumber">请输入正确手机号码！</string>
+    <string name="utilslib_regist_userinfo_vali_null">请输入验证码！</string>
+    <string name="utilslib_valicode_error">获取校验验证码失败</string>
+    <string name="utilslib_register_check_password">确认密码</string>
+    <string name="utilslib_register_commit">提交</string>
+    <string name="utilslib_password_different">输入的两次密码不一致！</string>
+    <string name="utilslib_search_hint">搜索</string>
     
-    <string name="utils_icon_account">&#xe636;</string>
-    <string name="utils_icon_password">&#xe639;</string>
-    <string name="utils_icon_arraw_left">&#xe60b;</string>
-    <string name="utils_icon_password2">&#xe638;</string>
-    <string name="icon_no_data">&#xe608;</string>
+    <string name="utilslib_icon_account">&#xe636;</string>
+    <string name="utilslib_icon_password">&#xe639;</string>
+    <string name="utilslib_icon_arraw_left">&#xe60b;</string>
+    <string name="utilslib_icon_password2">&#xe638;</string>
+    <string name="utilslib_icon_no_data">&#xe608;</string>
     
     
-    <string name="error_no_sdcard">没有SD卡，无法存储录音数据</string>
-    <string name="error_state_record">正在录音中，请先停止录音</string>
-    <string name="error_unknown">无法识别的错误</string>
+    <string name="utilslib_error_no_sdcard">没有SD卡，无法存储录音数据</string>
+    <string name="utilslib_error_state_record">正在录音中，请先停止录音</string>
+    <string name="utilslib_error_unknown">无法识别的错误</string>
+    
+    
+    
+    <string name="utilslib_icon_common_nodata"></string>
 
+    <string name="utilslib_viewpager_indicator">%1$d/%2$d</string>
+    
 </resources>

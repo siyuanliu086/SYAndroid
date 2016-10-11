@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/utilslib_background_colorfa" >
+    
+    <!-- 下载进度条 -->
+    <com.android.common.baseui.views.NumberProgressBar.NumberProgressBar
+        android:id="@+id/progressbar_dialog_web"
+        style="@style/NumberProgressBar_Relax_Blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:visibility="gone"/>
+
+    <com.android.common.baseui.webviewtookit.AdvancedWebView
+        android:id="@+id/fragment_wv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/progressbar_dialog_web"
+        android:layout_above="@+id/webview_line"/>
+    
+    <LinearLayout 
+        android:id="@+id/webview_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_marginTop="2dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/webview_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/utilslib_shape_button_theme_green"
+            android:padding="10dp"
+            android:text="下一步"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+    
+</RelativeLayout>

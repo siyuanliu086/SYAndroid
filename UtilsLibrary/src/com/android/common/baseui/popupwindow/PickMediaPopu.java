@@ -57,7 +57,7 @@ public class PickMediaPopu extends PopupWindow implements OnClickListener {
 		super(activity);
 		this.filePath = filePath;
 		this.activity = activity;
-		View view = View.inflate(activity, R.layout.utils_layout_popup_pickmedia, null);
+		View view = View.inflate(activity, R.layout.utilslib_layout_popup_pickmedia, null);
 		
 		takePhoto = (TextView) view.findViewById(R.id.utils_popup_media_takephoto);
 		addAudio = (TextView) view.findViewById(R.id.utils_popup_media_record);
@@ -70,7 +70,7 @@ public class PickMediaPopu extends PopupWindow implements OnClickListener {
 		setHeight(LayoutParams.MATCH_PARENT);
 		setAnimationStyle(R.style.utils_popuwindowstyle);
 		// 实例化一个ColorDrawable颜色为半透明 
-	    ColorDrawable dw = new ColorDrawable(activity.getResources().getColor(R.color.utils_transparent)); 
+	    ColorDrawable dw = new ColorDrawable(activity.getResources().getColor(R.color.utilslib_transparent)); 
 	    // 设置弹出窗体的背景 
 	    setBackgroundDrawable(dw); 
 		setFocusable(true);

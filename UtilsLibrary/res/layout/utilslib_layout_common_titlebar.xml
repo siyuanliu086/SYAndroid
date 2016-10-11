@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent" >
+
+    <View
+        android:id="@+id/title_padding_view"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp" />
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_below="@id/title_padding_view"
+        android:background="@color/utilslib_theme_color_green" >
+
+        <com.android.common.baseui.baseview.IconFontTextView
+            android:id="@+id/title_img_left"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:visibility="visible" />
+        <!-- android:drawablePadding="5dp" 设置图片和下拉箭头的间距 -->
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="70dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/titlebar_radiogroup"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <RadioButton
+                android:id="@+id/radiobutton_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/utilslib_titlebar_switch_radiobtn_left_selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:textColor="@color/utilslib_text_white_green_select"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/radiobutton_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/utilslib_titlebar_switch_radiobtn_right_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/utilslib_text_white_green_select"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+        <com.android.common.baseui.baseview.IconFontTextView
+            android:id="@+id/title_img_right"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/titile_right_button"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:gravity="center"
+            android:text="保存"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_network_layout"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_below="@+id/title_bar"
+        android:background="@color/utilslib_white_light_red"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/main_network_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/utilslib_titlebar_icon_network_exception" />
+
+        <TextView
+            android:id="@+id/main_network_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/main_network_image"
+            android:padding="10dp"
+            android:text="@string/utils_common_net_unavaiable"
+            android:textColor="#4b4b4b"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

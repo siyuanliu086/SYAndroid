@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.common.android.utilslibrary.R;
 
-
 /**
  * @TiTle PickDateTimePopu.java
  * @Package com.iss.zhhblsnt.views
@@ -60,7 +59,7 @@ public class PickDatePopu extends PopupWindow {
 	
 	private View initView() {
 		int[] screen = getScreenSize(mContext);
-		rootView = LayoutInflater.from(mContext).inflate(R.layout.utils_layout_popup_date, null);
+		rootView = LayoutInflater.from(mContext).inflate(R.layout.utilslib_layout_popup_date, null);
 		closeTv = (TextView) rootView.findViewById(R.id.utils_popup_close);
 		sureTv = (TextView) rootView.findViewById(R.id.utils_popup_sure);
 		
@@ -91,7 +90,7 @@ public class PickDatePopu extends PopupWindow {
 	    // 设置弹出窗体可点击 
 	    this.setFocusable(true); 
 	    // 实例化一个ColorDrawable颜色为半透明 
-	    ColorDrawable dw = new ColorDrawable(mContext.getResources().getColor(R.color.utils_transparent)); 
+	    ColorDrawable dw = new ColorDrawable(mContext.getResources().getColor(R.color.utilslib_transparent)); 
 	    // 设置弹出窗体的背景 
 	    this.setBackgroundDrawable(dw); 
 	    // 设置弹出窗体显示时的动画，从底部向上弹出 

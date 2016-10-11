@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_common_no_data_outlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:layout_gravity="center_vertical"
+    android:gravity="center">
+
+     <!-- Loading -->
+    <RelativeLayout
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:orientation="vertical"
+        android:visibility="gone">
+        
+        <View
+            android:id="@+id/loading_emptyview"
+            android:layout_width="wrap_content"
+            android:layout_height="8dp"
+            android:layout_centerInParent="true"/>
+        
+       <TextView
+            android:id="@+id/loading_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/loading_emptyview"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="5dp"
+            android:text="@string/utils_common_loading"
+            android:textColor="@color/utilslib_deep_gray"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/loading_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/utilslib_icon_loading"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp"
+            android:includeFontPadding="false"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/loading_textview"/>
+
+    </RelativeLayout>
+    
+    <!-- 无数据提示 -->
+    <RelativeLayout
+        android:id="@+id/no_data_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <com.android.common.baseui.baseview.IconFontTextView
+            android:id="@+id/no_data_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textSize="60sp"
+            android:text="@string/utilslib_icon_common_nodata"
+            android:textColor="#ccc" />
+        
+        <TextView
+            android:id="@+id/no_data_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_below="@+id/no_data_image"
+            android:gravity="center"
+            android:text="@string/utils_common_nodata"
+            android:textColor="@color/utilslib_deep_gray" 
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+   
+
+</RelativeLayout>

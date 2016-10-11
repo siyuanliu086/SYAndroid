@@ -9,7 +9,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/utilslib_app_name"
         android:theme="@style/AppTheme" >
     </application>
 

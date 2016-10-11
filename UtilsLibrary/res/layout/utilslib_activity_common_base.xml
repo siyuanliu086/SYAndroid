@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/utilslib_background_colorfa" >
+
+    <com.android.common.baseui.baseview.TitleBarView
+        android:id="@+id/base_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/base_main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/base_title_bar"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <!-- Loading和无数据处理 -->
+    <com.android.common.baseui.baseview.NoDataLoadingView
+        android:id="@+id/base_main_nodata_loading"
+        android:layout_below="@id/base_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

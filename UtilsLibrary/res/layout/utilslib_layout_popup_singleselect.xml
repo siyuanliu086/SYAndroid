@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="320dp"
         android:background="@android:color/white" >
 
         <TextView
@@ -16,9 +16,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_margin="10dp"
+            android:padding="10dp"
             android:text="@android:string/cancel"
-            android:textColor="@color/utils_text_black3"
+            android:textColor="@color/utilslib_text_black3"
             android:textSize="16sp" />
 
         <TextView
@@ -27,41 +27,32 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_margin="10dp"
+            android:padding="10dp"
             android:text="@android:string/ok"
-            android:textColor="@color/utils_text_black3"
+            android:textColor="@color/utilslib_text_black3"
             android:textSize="16sp" />
 
         <View
             android:id="@+id/utils_popup_datetime_line"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_below="@id/utils_popup_close"
-            android:background="@color/lines_color" />
+            android:background="@color/utilslib_lines_color" />
 
         <LinearLayout
-            android:id="@+id/utils_popup_datetime_picker_layout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="280dp"
             android:layout_centerInParent="true"
-            android:layout_below="@id/utils_popup_datetime_line"
-            android:orientation="horizontal" >
+            android:layout_below="@+id/utils_popup_datetime_line"
+            android:orientation="vertical" >
 
-            <DatePicker
-		        android:id="@+id/utils_popup_date_picker"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_gravity="center|center_vertical"
-		        android:calendarViewShown="false"/>
-		        
-            <TimePicker
-		        android:id="@+id/utils_popup_time_picker"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_gravity="center|center_vertical"
-		        android:layout_marginLeft="20dp"/>
-            
+            <com.android.common.baseui.views.WheelView
+                android:id="@+id/utils_popup_single_wheelview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal" />
         </LinearLayout>
     </RelativeLayout>
 

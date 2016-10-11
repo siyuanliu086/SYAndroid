@@ -14,7 +14,7 @@ import com.common.android.utilslibrary.R;
 /**
  * @TiTle PickMediaPopupWindow.java
  * @Package com.iss.zhhblsnt.views
- * @Description 底部菜单
+ * @Description 底部弹出菜单，选择：拍照、录音、视频... PopupWindow实现
  * @Date 2016年4月26日
  * @Author siyuan
  * @Refactor 
@@ -31,7 +31,7 @@ public class BottomMenuPopu extends PopupWindow implements OnClickListener {
 	 */
 	public BottomMenuPopu(Activity activity, String[] menuStr) {
 		super(activity);
-		View view = View.inflate(activity, R.layout.utils_layout_popup_menu, null);
+		View view = View.inflate(activity, R.layout.utilslib_layout_popup_menu, null);
 		
 		menu1Text = (TextView) view.findViewById(R.id.utils_popup_menu1);
 		menu2Text = (TextView) view.findViewById(R.id.utils_popup_menu2);
@@ -57,7 +57,7 @@ public class BottomMenuPopu extends PopupWindow implements OnClickListener {
 		setHeight(LayoutParams.MATCH_PARENT);
 		setAnimationStyle(R.style.utils_popuwindowstyle);
 		// 实例化一个ColorDrawable颜色为半透明 
-	    ColorDrawable dw = new ColorDrawable(activity.getResources().getColor(R.color.utils_transparent)); 
+	    ColorDrawable dw = new ColorDrawable(activity.getResources().getColor(R.color.utilslib_transparent)); 
 	    // 设置弹出窗体的背景 
 	    setBackgroundDrawable(dw); 
 		setFocusable(true);
