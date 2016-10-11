@@ -121,7 +121,7 @@
             android:layout_marginLeft="16dp"
             android:layout_toRightOf="@+id/main_network_image"
             android:padding="10dp"
-            android:text="@string/utils_common_net_unavaiable"
+            android:text="@string/utilslib_common_net_unavaiable"
             android:textColor="#4b4b4b"
             android:textSize="16sp" />
     </RelativeLayout>

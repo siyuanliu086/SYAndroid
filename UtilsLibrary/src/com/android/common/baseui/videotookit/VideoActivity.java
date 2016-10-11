@@ -63,7 +63,7 @@ public class VideoActivity extends BaseActivity {
 					e.printStackTrace();
 				}
 			} else if(msg.what == 2) {
-				ToastUtil.showShortToast(mContext, R.string.utils_common_video_download_failed);
+				ToastUtil.showShortToast(mContext, R.string.utilslib_common_video_download_failed);
 			}
 		}
 	};

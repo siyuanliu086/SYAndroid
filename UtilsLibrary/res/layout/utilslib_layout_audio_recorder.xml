@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/utils_popup_media_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#40000000" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/utils_audiorecorder_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="按下开始录音" />
+        <TextView
+            android:id="@+id/utils_audiorecorder_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/utils_audiorecorder_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="26dp"
+            android:padding="20dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/utils_audio_voice_button_stop" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -72,7 +72,7 @@ public class JSWebView extends LinearLayout implements
 				// 是否子类打开，子类允许拦截
 				AttachTool.getInstance().openAttach(mContext, attachModel);
 			} else if(msg.what == 2) {
-				ToastUtil.showShortToast(mContext, R.string.utils_common_error_downloadfile);
+				ToastUtil.showShortToast(mContext, R.string.utilslib_common_error_downloadfile);
 			}
 		}
 	};

@@ -119,7 +119,7 @@ public abstract class BaseFragment extends Fragment {
 	
 	public void onLoading() {
 		if(baseLoading != null) {
-			baseLoading.setText(R.string.utils_common_loading);
+			baseLoading.setText(R.string.utilslib_common_loading);
 			baseLoading.startLoading();
 		}
 	}
@@ -136,7 +136,7 @@ public abstract class BaseFragment extends Fragment {
 			if(infoRes != 0) {
 				baseLoading.setText(infoRes);
 			} else {
-				baseLoading.setText(R.string.utils_common_loading);
+				baseLoading.setText(R.string.utilslib_common_loading);
 			}
 			baseLoading.startLoading();
 		}

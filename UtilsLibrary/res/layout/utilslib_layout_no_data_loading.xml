@@ -28,7 +28,7 @@
             android:layout_above="@+id/loading_emptyview"
             android:layout_centerHorizontal="true"
             android:paddingTop="5dp"
-            android:text="@string/utils_common_loading"
+            android:text="@string/utilslib_common_loading"
             android:textColor="@color/utilslib_deep_gray"
             android:textSize="16sp"/>
 
@@ -70,7 +70,7 @@
             android:layout_marginTop="6dp"
             android:layout_below="@+id/no_data_image"
             android:gravity="center"
-            android:text="@string/utils_common_nodata"
+            android:text="@string/utilslib_common_nodata"
             android:textColor="@color/utilslib_deep_gray" 
             android:textSize="16sp"/>
     </RelativeLayout>

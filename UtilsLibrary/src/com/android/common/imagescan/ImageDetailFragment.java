@@ -85,7 +85,7 @@ public class ImageDetailFragment extends Fragment {
 			@Override
 			public void onLoadFailed(View arg0, String arg1, Drawable arg2) {
 				progressBar.setVisibility(View.GONE);
-				ToastUtil.showShortToast(getActivity(), R.string.utils_common_image_loadfaild);
+				ToastUtil.showShortToast(getActivity(), R.string.utilslib_common_image_loadfaild);
 			}
 		});	
 		

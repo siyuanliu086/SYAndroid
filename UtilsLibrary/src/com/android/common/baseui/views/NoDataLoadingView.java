@@ -130,7 +130,7 @@ public class NoDataLoadingView extends RelativeLayout{
 		if(!TextUtils.isEmpty(info)) {			
 			noDataText.setText(info);
 		} else {
-			noDataText.setText(R.string.utils_common_nodata);
+			noDataText.setText(R.string.utilslib_common_nodata);
 		}
 	}
 	
@@ -145,7 +145,7 @@ public class NoDataLoadingView extends RelativeLayout{
 		if(TextUtils.isEmpty(info)) {
 			noDataText.setText(info);
 		} else {			
-			noDataText.setText(R.string.utils_common_nodata);
+			noDataText.setText(R.string.utilslib_common_nodata);
 		}
 	}
 	
@@ -160,7 +160,7 @@ public class NoDataLoadingView extends RelativeLayout{
 		if(!TextUtils.isEmpty(info)) {			
 			noDataText.setText(info);
 		} else {
-			noDataText.setText(R.string.utils_common_data_reload);			
+			noDataText.setText(R.string.utilslib_common_data_reload);			
 		}
 		noDataText.setTextColor(getResources().getColor(R.color.utilslib_deep_gray));
 		noDataViewLayout.setOnClickListener(new OnClickListener() {
@@ -169,7 +169,7 @@ public class NoDataLoadingView extends RelativeLayout{
 			public void onClick(View v) {
 				if(onDataRefreshListener != null) {
 					isLoading = true;
-					noDataText.setText(R.string.utils_common_data_reloading);
+					noDataText.setText(R.string.utilslib_common_data_reloading);
 					noDataText.setTextColor(getResources().getColor(R.color.utilslib_deep_gray));
 					onDataRefreshListener.onDataRefresh();
 				} 
@@ -192,7 +192,7 @@ public class NoDataLoadingView extends RelativeLayout{
 		isLoading = false;
 		noDataViewLayout.setVisibility(View.VISIBLE);
 		noDataImage.setText("");// 加载失败，（暂无数据）
-		noDataText.setText(R.string.utils_common_data_reload);
+		noDataText.setText(R.string.utilslib_common_data_reload);
 		noDataText.setTextColor(getResources().getColor(R.color.utilslib_deep_gray));
 		noDataViewLayout.setOnClickListener(new OnClickListener() {
 			
@@ -200,7 +200,7 @@ public class NoDataLoadingView extends RelativeLayout{
 			public void onClick(View v) {
 				if(onDataRefreshListener != null) {
 					isLoading = true;
-					noDataText.setText(R.string.utils_common_data_reloading);
+					noDataText.setText(R.string.utilslib_common_data_reloading);
 					noDataText.setTextColor(getResources().getColor(R.color.utilslib_deep_gray));
 					onDataRefreshListener.onDataRefresh();
 				} 

@@ -175,7 +175,7 @@ public class AttachTool {
 				FileUtils.OpenFile(mContext, fileType, attachModel.getAttPath());
 			}
 		} else {
-			ToastUtil.showShortToast(mContext, R.string.utils_common_error_openfile);
+			ToastUtil.showShortToast(mContext, R.string.utilslib_common_error_openfile);
 		}
 	}
 }
