@@ -29,7 +29,7 @@ public class DrawPassActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.utils_layout_draw_pwd);
+		setContentView(R.layout.utilslib_layout_draw_pwd);
 		String savePass = PreferencesUtils.getSharePreStr(mContext, "password");
 		
 		mTextView = (TextView) findViewById(R.id.multi_tv_token_time_hint);
