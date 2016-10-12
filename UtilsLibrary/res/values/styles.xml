@@ -19,9 +19,13 @@
     
     <!-- activity 切换动画 -->
     <style name="AnimationActivity" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/utilslib_infromleft</item>
-        <item name="android:activityOpenExitAnimation">@anim/utilslib_outtoright</item>
+        <!-- 新的activity创建进入效果 -->
+        <item name="android:activityOpenEnterAnimation">@anim/utilslib_infromright</item>
+        <!-- activity还没有finish()下退出效果 -->
+        <item name="android:activityOpenExitAnimation">@anim/utilslib_outtoleft</item>
+        <!-- 上一个activity返回进入效果 -->
         <item name="android:activityCloseEnterAnimation">@anim/utilslib_infromleft</item>
+        <!-- activity finish()之后退出效果 -->
         <item name="android:activityCloseExitAnimation">@anim/utilslib_outtoright</item>
     </style>
 
