@@ -16,6 +16,14 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <!-- activity 切换动画 -->
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/utilslib_infromleft</item>
+        <item name="android:activityOpenExitAnimation">@anim/utilslib_outtoright</item>
+        <item name="android:activityCloseEnterAnimation">@anim/utilslib_infromleft</item>
+        <item name="android:activityCloseExitAnimation">@anim/utilslib_outtoright</item>
+    </style>
 
     <!-- 默认的loading对话框样式 -->
     <style name="DefaultCustomDialog" parent="@android:style/Theme.Dialog">
