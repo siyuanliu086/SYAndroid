@@ -1,8 +1,6 @@
 package com.android.common.utils;
 
 import java.io.File;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,13 +17,16 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Environment;
-import android.util.Log;
 import android.webkit.MimeTypeMap;
 
 /**
- * 
- * @author zhang_xinyuan
- *
+ * @TiTle AppUtils.java
+ * @Package com.android.common.utils
+ * @Description APP级别通用工具及方法
+ * @Date 2016年10月14日 
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-10-14
+ * @Company ISoftStone ZHHB
  */
 public class AppUtils {
 	
@@ -60,6 +61,7 @@ public class AppUtils {
 	
 	/**
 	 * 获取版本名
+	 * 
 	 * @param mContext
 	 * @return
 	 */
@@ -155,9 +157,9 @@ public class AppUtils {
 	}
 	
 	/**
-	 * 判断app 是否安装 com.dynamixsoftware.printershare
+	 * 判断app 是否安装 
 	 * @param context 	上下文
-	 * @param pageName	报名
+	 * @param pageName	包名
 	 * @return
 	 */
 	public static boolean existsApk(Context context, String pageName) {
@@ -174,28 +176,36 @@ public class AppUtils {
 	 * @param context
 	 * @return
 	 */
+	@SuppressWarnings("deprecation")
 	public static boolean isAction(final Context context) {
-	       ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-	       List<RunningTaskInfo> tasks = am.getRunningTasks(1);
-	       if (!tasks.isEmpty()) {
-	             ComponentName topActivity = tasks.get(0).topActivity;
-	             if (topActivity.getPackageName().equals(context.getPackageName())) {
-	                   return true;
-	             }
-	       }
-	     return false;
+	    ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+		List<RunningTaskInfo> tasks = am.getRunningTasks(1);
+		if (!tasks.isEmpty()) {
+			ComponentName topActivity = tasks.get(0).topActivity;
+			if (topActivity.getPackageName().equals(context.getPackageName())) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
-	public static boolean isActivityInTaskTop(Context context,String activityName){
+	/**
+	 * 判断Activity是否在栈顶（活动状态）
+	 * @param context
+	 * @param activityName
+	 * @return
+	 */
+	@SuppressWarnings("deprecation")
+	public static boolean isActivityInTaskTop(Context context, String activityName){
 		ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-	       List<RunningTaskInfo> tasks = am.getRunningTasks(1);
-	       if (!tasks.isEmpty()) {
-	             ComponentName topActivity = tasks.get(0).topActivity;
-	             if (topActivity.getClassName().equals(activityName)) {
-	                   return true;
-	             }
-	       }
-	     return false;
+		List<RunningTaskInfo> tasks = am.getRunningTasks(1);
+		if (!tasks.isEmpty()) {
+			ComponentName topActivity = tasks.get(0).topActivity;
+			if (topActivity.getClassName().equals(activityName)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	
@@ -206,15 +216,13 @@ public class AppUtils {
 	 */
 	public static String getSDPath() {
 		File sdDir = null;
-		boolean sdCardExist = Environment.getExternalStorageState().equals(
-				android.os.Environment.MEDIA_MOUNTED); // 判断SD卡是否存在
-		if (sdCardExist) {
+		// 判断SD卡是否存在
+		if (Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
 			sdDir = Environment.getExternalStorageDirectory();// 获取SD卡路径
 			return sdDir.toString();
 		} else {
 			return null;
 		}
-
 	}
 
 	/**
@@ -239,24 +247,7 @@ public class AppUtils {
 	 * @return
 	 */
 	public static String generateId(int length) {
-		String uuid = UUID.randomUUID().toString();
-	    return PadLeading(uuid, length, "");
-	}
-	
-	public static String PadLeading(String rString, int rLength, String rPad) {
-		String lTmpPad = "";
-		String lTmpStr = rString;
-
-		if (!StringUtil.isNull(lTmpStr)) {
-			if (lTmpStr.length() >= rLength)
-				return lTmpStr.substring(0, rLength);
-			else {
-				for (int gCnt = 1; gCnt <= rLength - lTmpStr.length(); gCnt++) {
-					lTmpPad = lTmpPad + rPad;
-				}
-			}
-		}
-		return lTmpPad + lTmpStr;
+		return UUID.randomUUID().toString();
 	}
 	
 }

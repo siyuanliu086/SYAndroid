@@ -3,6 +3,15 @@ package com.android.common.utils;
 import android.app.Activity;
 import android.graphics.Rect;
 
+/**
+ * @TiTle ActivityUtils.java
+ * @Package com.android.common.utils
+ * @Description Activity 页面内工具
+ * @Date 2016年10月14日
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-10-14
+ * @Company ISoftStone ZHHB
+ */
 public class ActivityUtils {
 	
 	/**
