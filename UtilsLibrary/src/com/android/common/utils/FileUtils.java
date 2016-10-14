@@ -42,6 +42,7 @@ import android.widget.Toast;
  */
 public class FileUtils {
 	private static final String TAG = "FileUtils";
+	private static final int BUFFER_SIZE = 64 * 1024;
 	private static final String SDCardPath=Environment.getExternalStorageDirectory() + "/";  
 	/**
 	 * 获取cache 缓存目录路径
@@ -50,7 +51,6 @@ public class FileUtils {
 	 * @return
 	 */
 	public static String getCacheDir(Context context) {
-
 		return getCacheDir(context, null);
 	}
 
@@ -86,7 +86,59 @@ public class FileUtils {
 		return getDir(context, false, childDirName);
 	}
 
+	/**
+	 * 获取文件扩展名
+	 * @param filename
+	 * @return
+	 */
+	public static String getExtensionName(String filename) {
+		if ((filename != null) && (filename.length() > 0)) {
+			int dot = filename.lastIndexOf('.');
+			if ((dot > -1) && (dot < (filename.length() - 1))) {
+				return filename.substring(dot + 1);
+			}
+		}
+		return filename;
+	}
+
+	/**
+	 * 从文件路径中获取文件名
+	 * @param filename
+	 * @return
+	 */
+	public static String getFileName(String filename) {
+		if ((filename != null) && (filename.length() > 0)) {
+			if (filename.contains("/")) {
+				return filename.substring(filename.lastIndexOf("/") + 1,
+						filename.length());
+			}
+		}
+		return filename;
+	}
 	
+	/**
+	 * 创建文件夹
+	 * @param folderPath
+	 */
+	public static void mkDirs(String folderPath) {
+		String[] strs = folderPath.split("/");
+		int len = strs.length;
+		String strPath = AppUtils.getSDPath() + "/";
+		File path;
+		for (int i = 0; i < len; i++) {
+			if (strs[i] != null && !"".equalsIgnoreCase(strs[i])) {
+				strPath += strs[i] + "/";
+				path = new File(strPath);
+				if (!path.exists()) {
+					try {
+						path.mkdirs();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+	}
 	
 	private static String getDir(Context context, boolean isCache, String childDirName) {
 		StringBuilder sb = new StringBuilder();
@@ -130,8 +182,7 @@ public class FileUtils {
 	 * @param dirPath
 	 * @return
 	 */
-	public static String copyAssetFileToSDCard(Context context, String fileName,
-			String dirPath) {
+	public static String copyAssetFileToSDCard(Context context, String fileName, String dirPath) {
 		try {
 			InputStream is = context.getAssets().open(fileName);
 			File pathFile = new File(dirPath);
@@ -143,7 +194,7 @@ public class FileUtils {
 				file.createNewFile();
 			}
 			FileOutputStream fos = new FileOutputStream(file);
-			byte[] temp = new byte[1024 * 32];
+			byte[] temp = new byte[BUFFER_SIZE];
 			int i = 0;
 			while ((i = is.read(temp)) > 0) {
 				fos.write(temp, 0, i);
@@ -167,7 +218,7 @@ public class FileUtils {
 			// 新建文件输出流并对它进行缓冲
 			outBuff = new BufferedOutputStream(new FileOutputStream(targetFile));
 			// 缓冲数组
-			byte[] b = new byte[1024 * 32];
+			byte[] b = new byte[BUFFER_SIZE];
 			int len;
 			while ((len = inBuff.read(b)) != -1) {
 				outBuff.write(b, 0, len);
@@ -205,7 +256,7 @@ public class FileUtils {
 			// 新建文件输出流并对它进行缓冲
 			outBuff = new BufferedOutputStream(new FileOutputStream(targetFile));
 			// 缓冲数组
-			byte[] b = new byte[1024 * 32];
+			byte[] b = new byte[BUFFER_SIZE];
 			int len;
 			while ((len = inBuff.read(b)) != -1) {
 				outBuff.write(b, 0, len);

@@ -1,11 +1,7 @@
 package com.android.common.utils;
 
 import java.io.File;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
-import java.sql.Timestamp;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +10,9 @@ import java.util.UUID;
 
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.Service;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.ActivityManager.RunningTaskInfo;
+import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -61,13 +57,29 @@ public class AppUtils {
 		}
 		return -1;
 	}
+	
+	/**
+	 * 获取版本名
+	 * @param mContext
+	 * @return
+	 */
+	public static String getCurrentVersionName(Activity mContext){
+		PackageInfo pi;
+		try {
+			pi = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), PackageManager.GET_CONFIGURATIONS);
+			return pi.versionName;
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	/**
 	 * 获取应用版本号和版本名称.
 	 * 
 	 * @param mctx
 	 * @param infos
-	 *            存储版本信息的容器(只存储了版本名称及版本号)
+	 * 存储版本信息的容器(只存储了版本名称及版本号)
 	 */
 	public static void getVersionInfo(Context mctx, Map<String, String> infos) {
 		getPackageManager(mctx);
@@ -107,13 +119,7 @@ public class AppUtils {
 	 * @return API Level
 	 */
 	public static int getAndroidSDKVersion() {
-		int version = 0;
-		try {
-			version = Integer.valueOf(android.os.Build.VERSION.SDK);
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-		}
-		return version;
+		return android.os.Build.VERSION.SDK_INT;
 	}
 
 	/**
@@ -146,17 +152,6 @@ public class AppUtils {
 			}
 		}
 		return false;
-	}
-	
-	public static String getCurrentVersionName(Activity mContext){
-		PackageInfo pi;
-		try {
-			pi = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), PackageManager.GET_CONFIGURATIONS);
-			return pi.versionName;
-		} catch (NameNotFoundException e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 	
 	/**
@@ -237,74 +232,6 @@ public class AppUtils {
 		return type;
 	}
 
-	/**
-	 * 获取文件扩展名
-	 * @param filename
-	 * @return
-	 */
-	public static String getExtensionName(String filename) {
-		if ((filename != null) && (filename.length() > 0)) {
-			int dot = filename.lastIndexOf('.');
-			if ((dot > -1) && (dot < (filename.length() - 1))) {
-				return filename.substring(dot + 1);
-			}
-		}
-		return filename;
-	}
-
-
-	/**
-	 * 从文件路径中获取文件名
-	 * @param filename
-	 * @return
-	 */
-	public static String getFileName(String filename) {
-		if ((filename != null) && (filename.length() > 0)) {
-			if (filename.contains("/")) {
-				return filename.substring(filename.lastIndexOf("/") + 1,
-						filename.length());
-			}
-		}
-		return filename;
-	}
-
-	
-	
-	/**
-	 * 输出当前时间
-	 */
-	public static void consolCurrentTime()
-	{
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//格式化时间
-		Date   curDate   =   new   Date(System.currentTimeMillis());
-		Log.v("当前时间",df.format(curDate) );
-	}
-	
-	/**
-	 * 创建文件夹
-	 * @param folderPath
-	 */
-	public static void mkDirs(String folderPath) {
-
-		String[] strs = folderPath.split("/");
-		int len = strs.length;
-		String strPath = AppUtils.getSDPath() + "/";
-		File path;
-		for (int i = 0; i < len; i++) {
-			if (strs[i] != null && !"".equalsIgnoreCase(strs[i])) {
-				strPath += strs[i] + "/";
-				path = new File(strPath);
-				if (!path.exists()) {
-					try {
-						path.mkdirs();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			}
-
-		}
-	}
 	
 	/**
 	 * 获取UUID
@@ -328,7 +255,6 @@ public class AppUtils {
 					lTmpPad = lTmpPad + rPad;
 				}
 			}
-
 		}
 		return lTmpPad + lTmpStr;
 	}
