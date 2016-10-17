@@ -1,6 +1,28 @@
 <resources>
     <string name="utilslib_app_name">utils_library</string>
     
+    <!-- iconfont lib -->
+    <!-- arraw of all directions -->
+    <string name="utilslib_icon_arraw_down">&#xe601;</string>
+    <string name="utilslib_icon_arraw_left">&#xe602;</string>
+    <string name="utilslib_icon_arraw_up">&#xe603;</string>
+    <string name="utilslib_icon_arraw_right">&#xe604;</string>
+    
+    <!-- login and account -->
+    <string name="utilslib_icon_account">&#xe606;</string>
+    <string name="utilslib_icon_password">&#xe607;</string>
+    <string name="utilslib_icon_password2">&#xe60a;</string>
+    <string name="utilslib_icon_phone">&#xe605;</string>
+    <string name="utilslib_icon_sms">&#xe608;</string>
+    
+    <!-- network problem -->
+    <string name="utilslib_icon_network_problem">&#xe60d;</string>
+    <string name="utilslib_icon_network_failed">&#xe60c;</string>
+    
+    <!-- load failed and retry -->
+    <string name="utilslib_icon_no_data">&#xe609;</string>
+    
+    
     <string name="utilslib_common_net_unavaiable">网络连接不可用</string>
     <string name="utilslib_common_loading">正在加载</string>
     <string name="utilslib_common_nodata">暂无数据</string>
@@ -48,11 +70,7 @@
     <string name="utilslib_password_different">输入的两次密码不一致！</string>
     <string name="utilslib_search_hint">搜索</string>
     
-    <string name="utilslib_icon_account">&#xe636;</string>
-    <string name="utilslib_icon_password">&#xe639;</string>
-    <string name="utilslib_icon_arraw_left">&#xe60b;</string>
-    <string name="utilslib_icon_password2">&#xe638;</string>
-    <string name="utilslib_icon_no_data">&#xe608;</string>
+    
     
     
     
@@ -79,4 +97,5 @@
     <!-- 录音 -->
     <string name="utilslib_audiorecoder_state_record_error">正在录音中，请先停止录音</string>
     <string name="utilslib_audiorecoder_unknown_type">无法识别的错误</string>
+    
 </resources>

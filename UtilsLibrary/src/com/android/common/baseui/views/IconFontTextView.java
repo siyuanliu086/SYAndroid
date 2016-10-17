@@ -30,8 +30,17 @@ public class IconFontTextView extends TextView{
 		initView();
 	}
 	
+	/**
+	 * 设置iconfont文件
+	 * @param iconfontFileName iconfont files in assets
+	 */
+	public void setIconfontName(String iconfontFileName) {
+		Typeface iconfont = Typeface.createFromAsset(mContext.getAssets(), iconfontFileName);
+		setTypeface(iconfont);
+	}
+	
 	private void initView() {
-		Typeface iconfont = Typeface.createFromAsset(mContext.getAssets(), "iconfont.ttf");
+		Typeface iconfont = Typeface.createFromAsset(mContext.getAssets(), "utilslib_iconfont.ttf");
 		setTypeface(iconfont);
 	}
 
