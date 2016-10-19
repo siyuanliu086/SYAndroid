@@ -16,13 +16,14 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Configuration;
 import android.os.Environment;
 import android.webkit.MimeTypeMap;
 
 /**
  * @TiTle AppUtils.java
  * @Package com.android.common.utils
- * @Description APP级别通用工具及方法
+ * @Description APP级别通用工具及方法（版本号、应用信息、SD卡路径、系统版本、服务运行、UUID、横竖屏）
  * @Date 2016年10月14日 
  * @Author siyuan
  * @Refactor siyuan FIX 2016-10-14
@@ -249,5 +250,16 @@ public class AppUtils {
 	public static String generateId(int length) {
 		return UUID.randomUUID().toString();
 	}
-	
+
+    /**
+     * 查询屏幕是否竖屏，非竖屏则横屏
+     * @param context
+     * @return
+     */
+	public static boolean isScreenPortrait(Context context) {
+		Configuration mConfiguration = context.getResources()
+				.getConfiguration(); // 获取设置的配置信息
+		int ori = mConfiguration.orientation; // 获取屏幕方向
+		return ori == Configuration.ORIENTATION_PORTRAIT;
+	}
 }

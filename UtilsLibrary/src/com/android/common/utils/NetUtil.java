@@ -1,6 +1,13 @@
 package com.android.common.utils;
 
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
+
+import org.apache.http.conn.util.InetAddressUtils;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -10,15 +17,20 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
 /**
- * @author LuoJ
- * @date 2014-3-18
- * @package com.anhry.android.utils -- NetUtil.java
- * @Description 网络工具类
+ * @TiTle NetUtil.java
+ * @Package com.android.common.utils
+ * @Description 网络工具类(判断网络、设置网络、IP地址、Mac地址)
+ * @Date 2016年10月19日
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-10-19
+ * @Company ISoftStone ZHHB
  */
 public class NetUtil {
 
@@ -166,6 +178,45 @@ public class NetUtil {
 		return false;
 	}
 	
+	/**
+	 * 获取设备IP地址
+	 * @return
+	 */
+	public static String getDeviceIP() {
+		try {
+			for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
+				NetworkInterface intf = en.nextElement();
+				for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
+					InetAddress inetAddress = enumIpAddr.nextElement();
+					if (!inetAddress.isLoopbackAddress()
+							&& InetAddressUtils.isIPv4Address(inetAddress.getHostAddress())) {
+						if (!inetAddress.getHostAddress().toString().equals("null")
+								&& inetAddress.getHostAddress() != null) {
+							return inetAddress.getHostAddress().toString().trim();
+						}
+					}
+				}
+			}
+		} catch (SocketException ex) {
+			Log.e("WifiPreference IpAddress", ex.toString());
+		}
+		return "";
+	}
+	
+	/**
+	 * 返回[IP,MAC]
+	 * @param mContext
+	 * @return
+	 */
+	public String[] getLocalMacAddress(Context mContext) {  
+		WifiManager wifi = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
+		WifiInfo info = wifi.getConnectionInfo();
+		return new String[]{intToIp(info.getIpAddress()), info.getMacAddress()};
+    }   
+	private String intToIp(int i) {       
+		return (i & 0xFF ) + "." + ((i >> 8 ) & 0xFF) + "." + ((i >> 16 ) & 0xFF) + "." + ( i >> 24 & 0xFF) ;  
+	}
+
 }
 
 

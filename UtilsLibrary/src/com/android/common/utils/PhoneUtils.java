@@ -3,18 +3,23 @@ package com.android.common.utils;
 import java.lang.reflect.Field;
 import java.util.Map;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.res.Configuration;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
+import android.telephony.PhoneNumberUtils;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
 /**
- * 
- * @author LuoJ
- * @date 2013-9-23
- * @package com.lidroid.xutils.util -- PhoneUtils.java
- * @Description 手机相关信息获取的工具类
+ * @TiTle PhoneUtils.java
+ * @Package com.android.common.utils
+ * @Description 手机相关信息获取的工具类（查询手机运行商、手机号、打电话、发短信）
+ * @Date 2016年10月19日
+ * @Author siyuan
+ * @Refactor 
+ * @Company ISoftStone ZHHB
  */
 public class PhoneUtils {
 	private static TelephonyManager mTelephoneManage;//
@@ -95,15 +100,26 @@ public class PhoneUtils {
 		}
 	}
 	
-    /**
-     * 查询屏幕是否竖屏，非竖屏则横屏
-     * @param context
-     * @return
-     */
-	public static boolean isScreenPortrait(Context context) {
-		Configuration mConfiguration = context.getResources()
-				.getConfiguration(); // 获取设置的配置信息
-		int ori = mConfiguration.orientation; // 获取屏幕方向
-		return ori == Configuration.ORIENTATION_PORTRAIT;
+	/**
+	 * 打电话
+	 * @param act
+	 * @param telNum
+	 */
+	public void telPhone(Activity act,String telNum){
+		Intent intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+telNum));  
+		act.startActivity(intent);
+	}
+	
+	/**
+	 * 调起系统发短信功能	
+	 * @param phoneNumber
+	 * @param message
+	 */
+	public static void doSendSMSTo(Context context, String phoneNumber, String message){
+		if(PhoneNumberUtils.isGlobalPhoneNumber(phoneNumber)){
+			Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"+phoneNumber));          
+			intent.putExtra("sms_body", message);          
+			context.startActivity(intent);
+		}
 	}
 }
