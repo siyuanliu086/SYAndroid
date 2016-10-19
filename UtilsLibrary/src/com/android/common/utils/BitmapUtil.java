@@ -10,7 +10,10 @@ import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -43,7 +46,9 @@ import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 
 /**
  * @TiTle BitmapUtil.java
@@ -243,6 +248,57 @@ public class BitmapUtil {
 		Bitmap bmp = Bitmap.createBitmap(cv.getWidth(), cv.getHeight(), Bitmap.Config.ARGB_4444);
 		cv.draw(new Canvas(bmp));
 		return bmp;
+	}
+	
+	/**
+	 * 获取和保存当前屏幕的截图
+	 */
+	public static void SaveCurrentImage(Context mctx) {
+		Activity mActivity=(Activity)mctx;
+		// 创建Bitmap
+		WindowManager windowManager = mActivity.getWindowManager();
+		Display display = windowManager.getDefaultDisplay();
+		int w = display.getWidth();
+		int h = display.getHeight();
+
+		Bitmap bmp = Bitmap.createBitmap(w, h, Config.ARGB_8888);
+
+		// 获取屏幕
+		View decorview = mActivity.getWindow().getDecorView();
+		decorview.setDrawingCacheEnabled(true);
+		bmp = decorview.getDrawingCache();
+
+		String SavePath = AppUtils.getSDPath() + "/ScreenImage";
+
+		// 存储为Bitmap
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss",
+					Locale.CHINA);
+
+			File path = new File(SavePath);
+			// 文件
+			String filepath = SavePath + "/" + sdf.format(new Date()) + ".png";
+			File file = new File(filepath);
+			if (!path.exists()) {
+				path.mkdirs();
+			}
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+
+			FileOutputStream fos = null;
+			fos = new FileOutputStream(file);
+			if (null != fos) {
+				bmp.compress(Bitmap.CompressFormat.PNG, 100, fos);
+				fos.flush();
+				fos.close();
+				LogUtils.d("截屏文件已保存至SDCard/ScreenImage/下");
+				ToastUtil.showShortToast(mctx, "截屏文件已保存至SDCard/ScreenImage/下");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
