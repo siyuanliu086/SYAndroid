@@ -39,7 +39,7 @@ public class SingleWheelPopu extends PopupWindow {
     
     private List<String> dataList;
 
-	public SingleWheelPopu(Context context, OnItemSelectedListener listener, List<String> dataList) {
+	public SingleWheelPopu(Context context, OnItemSelectedListener listener, List<String> dataList, boolean isDefault) {
 		super(context);
 		this.mContext = context;
 		this.listener = listener;
@@ -48,7 +48,7 @@ public class SingleWheelPopu extends PopupWindow {
 		initView();
 		initData();
 		
-		if(listener != null)
+		if(listener != null & isDefault)// 是否默认选择一项
     		listener.onItemSelectedListener(0);
 	}
 	
@@ -124,7 +124,6 @@ public class SingleWheelPopu extends PopupWindow {
             @Override
             public void onSelected(int selectedIndex, String item) {
             	position = selectedIndex;
-            	
             }
         });
     }
