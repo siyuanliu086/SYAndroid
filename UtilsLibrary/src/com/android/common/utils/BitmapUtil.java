@@ -45,8 +45,16 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 
+/**
+ * @TiTle BitmapUtil.java
+ * @Package com.android.common.utils
+ * @Description 图片处理工具类
+ * @Date 2016年10月19日
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-10-19
+ * @Company ISoftStone ZHHB
+ */
 public class BitmapUtil {
-
 	public static BlockingQueue queue; // 缓冲队列
 	private static ThreadPoolExecutor executor;
 	private static int ThreadCount = 5; // 线程个数
@@ -124,8 +132,7 @@ public class BitmapUtil {
 		// RCB means
 		// Rounded
 		// Corner Bitmap
-		Bitmap dstbmp = Bitmap.createBitmap(bitmap.getWidth(),
-				bitmap.getHeight(), Config.ARGB_8888);
+		Bitmap dstbmp = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Config.ARGB_8888);
 		Canvas canvas = new Canvas(dstbmp);
 
 		final int color = 0xff424242;
@@ -175,11 +182,9 @@ public class BitmapUtil {
 	 * @return
 	 */
 	public static Bitmap drawableToBitmap(Drawable drawable) {
-		Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
-				drawable.getIntrinsicHeight(), Bitmap.Config.RGB_565);
+		Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.RGB_565);
 		Canvas canvas = new Canvas(bitmap);
-		drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
-				drawable.getIntrinsicHeight());
+		drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
 		drawable.draw(canvas);
 		return bitmap;
 	}
@@ -202,7 +207,6 @@ public class BitmapUtil {
 	 * @return
 	 */
 	public static String bitmaptoString(Bitmap bitmap) {
-
 		String string = null;
 		ByteArrayOutputStream bStream = new ByteArrayOutputStream();
 		// bitmap.compress(CompressFormat.PNG, 100, bStream);
@@ -219,8 +223,7 @@ public class BitmapUtil {
 		try {
 			byte[] bitmapArray;
 			bitmapArray = Base64.decode(base64Str, Base64.DEFAULT);
-			bitmap = BitmapFactory.decodeByteArray(bitmapArray, 0,
-					bitmapArray.length);
+			bitmap = BitmapFactory.decodeByteArray(bitmapArray, 0, bitmapArray.length);
 			// bitmap = BitmapFactory.decodeFile(string);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -237,8 +240,7 @@ public class BitmapUtil {
 	 */
 	public static Bitmap getScreenshotForCurrentWindow(Activity activity) {
 		View cv = activity.getWindow().getDecorView();
-		Bitmap bmp = Bitmap.createBitmap(cv.getWidth(), cv.getHeight(),
-				Bitmap.Config.ARGB_4444);
+		Bitmap bmp = Bitmap.createBitmap(cv.getWidth(), cv.getHeight(), Bitmap.Config.ARGB_4444);
 		cv.draw(new Canvas(bmp));
 		return bmp;
 	}
@@ -273,26 +275,18 @@ public class BitmapUtil {
 	 * @return
 	 */
 	public static Bitmap zoomImage(Bitmap bgimage, int newWidth, int newHeight) {
-
 		// 获取这个图片的宽和高
-
 		int width = bgimage.getWidth();
 		int height = bgimage.getHeight();
-
 		// 创建操作图片用的matrix对象
-
 		Matrix matrix = new Matrix();
-
 		// 计算缩放率，新尺寸除原始尺寸
-
 		float scaleWidth = ((float) newWidth) / width;
 		float scaleHeight = ((float) newHeight) / height;
 
 		// 缩放图片动作
-
 		matrix.postScale(scaleWidth, scaleHeight);
-		Bitmap bitmap = Bitmap.createBitmap(bgimage, 0, 0, width, height,
-				matrix, true);
+		Bitmap bitmap = Bitmap.createBitmap(bgimage, 0, 0, width, height, matrix, true);
 		return bitmap;
 
 	}
@@ -305,26 +299,20 @@ public class BitmapUtil {
 	 * @return
 	 */
 	public static Bitmap rotate(Bitmap b, int degrees) {
-
 		if (degrees != 0 && b != null) {
 			Matrix m = new Matrix();
-			m.setRotate(degrees, (float) b.getWidth() / 2,
-					(float) b.getHeight() / 2);
+			m.setRotate(degrees, (float) b.getWidth() / 2, (float) b.getHeight() / 2);
 			try {
-				Bitmap b2 = Bitmap.createBitmap(b, 0, 0, b.getWidth(),
-						b.getHeight(), m, true);
+				Bitmap b2 = Bitmap.createBitmap(b, 0, 0, b.getWidth(), b.getHeight(), m, true);
 				if (b != b2) {
 					b.recycle();
 					b = b2;
 				}
-
 			} catch (OutOfMemoryError ex) {
+				ex.printStackTrace();
 			}
-
 		}
-
 		return b;
-
 	}
 
 	/**
@@ -413,7 +401,6 @@ public class BitmapUtil {
 					bp.compress(Bitmap.CompressFormat.PNG, 100, fOut);
 					fOut.flush();
 				}
-
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -436,8 +423,7 @@ public class BitmapUtil {
 	     BitmapFactory.decodeFile(filePath, opts);  
 	  
 	     opts.inSampleSize = computeSampleSize(opts, -1, maxNUmberOfPixels);  
-	     opts.inJustDecodeBounds = false;  
-	  
+	     opts.inJustDecodeBounds = false;    
 	     try {  
 	         bitmap = BitmapFactory.decodeFile(filePath, opts);  
 	     }catch (Exception e) {  
@@ -564,8 +550,7 @@ public class BitmapUtil {
 		height = bmpOriginal.getHeight();
 		width = bmpOriginal.getWidth();
 
-		Bitmap bmpGrayscale = Bitmap.createBitmap(width, height,
-				Bitmap.Config.RGB_565);
+		Bitmap bmpGrayscale = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
 		Canvas c = new Canvas(bmpGrayscale);
 		Paint paint = new Paint();
 		ColorMatrix cm = new ColorMatrix();
@@ -661,8 +646,7 @@ public class BitmapUtil {
 				imageFile.createNewFile();
 			}
 
-			BufferedOutputStream bos = new BufferedOutputStream(
-					new FileOutputStream(spath, false));
+			BufferedOutputStream bos = new BufferedOutputStream( new FileOutputStream(spath, false));
 			photo.compress(Bitmap.CompressFormat.JPEG, isCompression ? 50 : 100, bos);
 			bos.flush();
 			bos.close();
@@ -749,8 +733,7 @@ public class BitmapUtil {
 	}
     
     // 从sd卡上加载缩略图片
-    public static Bitmap decodeSampledBitmapFromSd(String pathName,
-            int reqWidth, int reqHeight) {
+    public static Bitmap decodeSampledBitmapFromSd(String pathName, int reqWidth, int reqHeight) {
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(pathName, options);

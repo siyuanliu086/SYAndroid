@@ -18,10 +18,10 @@ import com.common.android.utilslibrary.R;
 /**
  * @TiTle AttachUtils.java
  * @Package com.android.common.utils
- * @Description Attach 工具，打开Attach附件
+ * @Description Attach 工具，打开Attach附件：图片用自有图片浏览，其他附件设备默认打开
  * @Date 2016年6月16日
  * @Author siyuan
- * @Refactor 
+ * @Refactor siyuan FIX 2016-10-19
  * @Company ISoftStone ZHHB
  */
 public class AttachTool {
