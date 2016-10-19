@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
-import com.android.common.baseui.views.NoDataLoadingView;
+import com.android.common.baseui.views.CustomLoadingView;
 import com.android.common.baseui.views.NumberProgressBar;
 import com.android.common.baseui.views.TitleBarView;
 import com.android.common.utils.ActivityUtils;
@@ -42,7 +42,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 	/**网络状态，子类使用*/
 	protected boolean netWorkState;
 	/**加载等待框*/
-	public NoDataLoadingView baseLoading;
+	public CustomLoadingView baseLoading;
 	
 	/**加载进度条*/
 	public NumberProgressBar progressBarView;
@@ -55,7 +55,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 		baseTitleBar = (TitleBarView) findViewById(R.id.base_title_bar);
 		setTitleStatusPadding(baseTitleBar);
 		
-		baseLoading = (NoDataLoadingView) findViewById(R.id.base_main_nodata_loading);
+		baseLoading = (CustomLoadingView) findViewById(R.id.base_main_nodata_loading);
 		mainContentLayout = (LinearLayout) findViewById(R.id.base_main_content);
 		
 		mInflater = LayoutInflater.from(this);

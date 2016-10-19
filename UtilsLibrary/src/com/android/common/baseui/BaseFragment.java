@@ -16,7 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.android.common.baseui.views.NoDataLoadingView;
+import com.android.common.baseui.views.CustomLoadingView;
 import com.android.common.baseui.views.TitleBarView;
 import com.android.common.utils.ActivityUtils;
 import com.common.android.utilslibrary.R;
@@ -37,7 +37,7 @@ public abstract class BaseFragment extends Fragment {
 	protected boolean netWorkState;
 	
 	protected TitleBarView mTitleBarView;
-    protected NoDataLoadingView baseLoading;
+    protected CustomLoadingView baseLoading;
     protected InputMethodManager inputMethodManager;
 
 	/**
@@ -72,7 +72,7 @@ public abstract class BaseFragment extends Fragment {
 		RelativeLayout rootView = (RelativeLayout) inflater.inflate(R.layout.utilslib_fragment_common_base, null);
 		content = (LinearLayout) rootView.findViewById(R.id.basefragment_content);
 		mTitleBarView = (TitleBarView) rootView.findViewById(R.id.basefragment_title_bar);
-	    baseLoading = (NoDataLoadingView) rootView.findViewById(R.id.basefragment_nodata_loading);
+	    baseLoading = (CustomLoadingView) rootView.findViewById(R.id.basefragment_nodata_loading);
 		content.addView(onCreateView(inflater, savedInstanceState));
 		
 		initView();

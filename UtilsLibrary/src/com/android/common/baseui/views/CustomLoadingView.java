@@ -24,7 +24,7 @@ import com.common.android.utilslibrary.R;
  * @Refactor 
  * @Company ISoftStone ZHHB
  */
-public class NoDataLoadingView extends RelativeLayout{
+public class CustomLoadingView extends RelativeLayout{
     private Context mContext;
     private ImageView loadingImage; 
     private IconFontTextView noDataImage;
@@ -33,13 +33,13 @@ public class NoDataLoadingView extends RelativeLayout{
     
     private boolean isLoading = false;
     
-	public NoDataLoadingView(Context context) {
+	public CustomLoadingView(Context context) {
 		super(context);
 		mContext=context;
 		initView();
 	}
 	
-	public NoDataLoadingView(Context context, AttributeSet attrs) {
+	public CustomLoadingView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		mContext=context;
 		initView();
