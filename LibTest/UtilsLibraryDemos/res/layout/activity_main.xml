@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:CircleProgressBar="http://schemas.android.com/apk/res/com.siyuan.utilslibrarydemos"
+    xmlns:LabelView="http://schemas.android.com/apk/res/com.siyuan.utilslibrarydemos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.siyuan.utilslibrarydemos.MainActivity" >
+    
+    <com.android.common.baseui.views.SearchView
+        android:id="@+id/search_bar"  
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/utilslib_shape_searchbar_bg"
+        android:drawableLeft="@drawable/utilslib_icon_search"
+        android:drawablePadding="@dimen/utilslib_margin6"
+        android:maxLength="20"
+        android:hint="@string/utilslib_common_search"
+        android:padding="@dimen/utilslib_margin6"
+        android:singleLine="true"
+        android:textColor="@color/utilslib_deep_gray"
+        android:textSize="@dimen/system_content14"/>
+    
+    
+    <com.android.common.baseui.progressbar.CircleProgressBar   
+	    android:id="@+id/pw_spinner"     
+	    android:layout_width="120dp"    
+	    android:layout_height="120dp"   
+	    android:layout_below="@id/search_bar"
+	    CircleProgressBar:cpbTextColor="#222"   
+	    CircleProgressBar:cpbTextSize="14sp"   
+	    CircleProgressBar:cpbRimColor="#330097D6"   
+	    CircleProgressBar:cpbBarLength="60dp"    
+	    CircleProgressBar:cpbBarColor="#0097D6"   
+	    CircleProgressBar:cpbBarWidth="5dp"   
+	    CircleProgressBar:cpbRimWidth="2dp" /> 
+
+    <com.android.common.baseui.labelview.LabelTextView
+	    android:id="@+id/text"
+	    android:layout_width="wrap_content"
+	    android:layout_height="48dp"
+	    android:layout_gravity="center"
+	    android:layout_marginTop="8dp"
+	    android:background="@color/utilslib_theme_color_green"
+	    android:gravity="center"
+	    android:paddingLeft="28dp"
+	    android:paddingRight="28dp"
+	    android:layout_below="@id/search_bar"
+	    android:layout_toRightOf="@id/pw_spinner"
+	    android:text="TextView"
+	    android:textColor="#ffffff"
+	    LabelView:label_backgroundColor="#03A9F4"
+	    LabelView:label_distance="15dp"
+	    LabelView:label_orientation="LEFT_TOP"
+	    LabelView:label_text="POP"
+	    LabelView:label_textSize="10sp" />
+</RelativeLayout>
