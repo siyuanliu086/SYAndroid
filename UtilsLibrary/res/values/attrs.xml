@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- 线性进度条 -->
     <declare-styleable name="NumberProgressBar">
         <attr name="progress_current" format="integer" />
@@ -30,7 +31,7 @@
         </attr>
         <attr name="svg_raw_resource" format="reference" />
     </declare-styleable>
-    
+
     <!-- 标签View -->
     <declare-styleable name="LabelView">
         <attr name="label_distance" format="dimension" />
@@ -46,6 +47,24 @@
             <enum name="LEFT_BOTTOM" value="3" />
             <enum name="RIGHT_BOTTOM" value="4" />
         </attr>
+    </declare-styleable>
+    
+    <!-- ProgressWheel  -->
+    <declare-styleable name="CircleProgressBar">
+        <attr name="cpbText" format="string" />
+        <attr name="cpbTextColor" format="color" />
+        <attr name="cpbTextSize" format="dimension" />
+        <attr name="cpbBarColor" format="color" />
+        <attr name="cpbRimColor" format="color" />
+        <attr name="cpbRimWidth" format="dimension" />
+        <attr name="cpbSpinSpeed" format="integer" />
+        <attr name="cpbCircleColor" format="color" />
+        <attr name="cpbRadius" format="dimension" />
+        <attr name="cpbBarWidth" format="dimension" />
+        <attr name="cpbBarLength" format="dimension" />
+        <attr name="cpbDelayMillis" format="dimension" />
+        <attr name="cpbContourColor" format="color" />
+        <attr name="cpbContourSize" format="float" />
     </declare-styleable>
 
 </resources>
