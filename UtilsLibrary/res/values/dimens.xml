@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="utilslib_horizontal_margin">10dp</dimen>
+    <dimen name="utilslib_vertical_margin">10dp</dimen>
+    <dimen name="utilslib_margin10">10dp</dimen>
+    <dimen name="utilslib_margin6">6dp</dimen>
+    <dimen name="utilslib_margin8">8dp</dimen>
+
+    <!-- 系統的字体大标题 -->
+    <dimen name="system_title">22sp</dimen>
+    <dimen name="system_content20">20sp</dimen>
+    <dimen name="system_content18">18sp</dimen>
+    <dimen name="system_content16">16sp</dimen><!-- 一级页面标题 -->
+    <dimen name="system_content14">14sp</dimen><!-- 页面标题 -->
+    <dimen name="system_content12">12sp</dimen><!-- 页面内容字体 -->
+    
+    <dimen name="system_icon_size">32sp</dimen><!-- iconfont字体默认大小 -->
+
+</resources>

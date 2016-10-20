@@ -68,7 +68,7 @@
     <string name="utilslib_register_check_password">确认密码</string>
     <string name="utilslib_register_commit">提交</string>
     <string name="utilslib_password_different">输入的两次密码不一致！</string>
-    <string name="utilslib_search_hint">搜索</string>
+    <string name="utilslib_common_search">搜索</string>
     
     
     
