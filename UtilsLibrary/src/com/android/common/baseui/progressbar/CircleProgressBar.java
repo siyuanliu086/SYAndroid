@@ -233,27 +233,27 @@ public class CircleProgressBar extends View {
      * @param a the attributes to parse
      */
     private void parseAttributes(TypedArray a) {
-        barWidth = (int) a.getDimension(R.styleable.CircleProgressBar_pwBarWidth, barWidth);
-        rimWidth = (int) a.getDimension(R.styleable.CircleProgressBar_pwRimWidth, rimWidth);
-        spinSpeed = (int) a.getDimension(R.styleable.CircleProgressBar_pwSpinSpeed, spinSpeed);
-        barLength = (int) a.getDimension(R.styleable.CircleProgressBar_pwBarLength, barLength);
+        barWidth = (int) a.getDimension(R.styleable.CircleProgressBar_cpbBarWidth, barWidth);
+        rimWidth = (int) a.getDimension(R.styleable.CircleProgressBar_cpbRimWidth, rimWidth);
+        spinSpeed = (int) a.getDimension(R.styleable.CircleProgressBar_cpbSpinSpeed, spinSpeed);
+        barLength = (int) a.getDimension(R.styleable.CircleProgressBar_cpbBarLength, barLength);
 
-        delayMillis = a.getInteger(R.styleable.CircleProgressBar_pwDelayMillis, delayMillis);
+        delayMillis = a.getInteger(R.styleable.CircleProgressBar_cpbDelayMillis, delayMillis);
         if (delayMillis < 0) { delayMillis = 10; }
 
         // Only set the text if it is explicitly defined
-        if (a.hasValue(R.styleable.CircleProgressBar_pwText)) {
-            setText(a.getString(R.styleable.CircleProgressBar_pwText));
+        if (a.hasValue(R.styleable.CircleProgressBar_cpbText)) {
+            setText(a.getString(R.styleable.CircleProgressBar_cpbText));
         }
 
-        barColor = a.getColor(R.styleable.CircleProgressBar_pwBarColor, barColor);
-        textColor = a.getColor(R.styleable.CircleProgressBar_pwTextColor, textColor);
-        rimColor = a.getColor(R.styleable.CircleProgressBar_pwRimColor, rimColor);
-        circleColor = a.getColor(R.styleable.CircleProgressBar_pwCircleColor, circleColor);
-        contourColor = a.getColor(R.styleable.CircleProgressBar_pwContourColor, contourColor);
+        barColor = a.getColor(R.styleable.CircleProgressBar_cpbBarColor, barColor);
+        textColor = a.getColor(R.styleable.CircleProgressBar_cpbTextColor, textColor);
+        rimColor = a.getColor(R.styleable.CircleProgressBar_cpbRimColor, rimColor);
+        circleColor = a.getColor(R.styleable.CircleProgressBar_cpbCircleColor, circleColor);
+        contourColor = a.getColor(R.styleable.CircleProgressBar_cpbContourColor, contourColor);
 
-        textSize = (int) a.getDimension(R.styleable.CircleProgressBar_pwTextSize, textSize);
-        contourSize = a.getDimension(R.styleable.CircleProgressBar_pwContourSize, contourSize);
+        textSize = (int) a.getDimension(R.styleable.CircleProgressBar_cpbTextSize, textSize);
+        contourSize = a.getDimension(R.styleable.CircleProgressBar_cpbContourSize, contourSize);
 
         a.recycle();
     }
