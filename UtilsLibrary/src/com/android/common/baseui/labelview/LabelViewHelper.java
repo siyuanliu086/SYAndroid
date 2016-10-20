@@ -1,4 +1,4 @@
-package com.android.common.baseui.baselabelview;
+package com.android.common.baseui.labelview;
 
 import android.content.Context;
 import android.content.res.TypedArray;

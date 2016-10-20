@@ -1,13 +1,13 @@
-package com.android.common.baseui.baselabelview;
+package com.android.common.baseui.labelview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
- * @TiTle LabelImageView.java
+ * @TiTle LabelTextView.java
  * @Package com.android.common.baseui.baselabelview
  * @Description
  * @Date 2016年10月17日
@@ -15,31 +15,36 @@ import android.widget.ImageView;
  * @Refactor 
  * @Company ISoftStone ZHHB
  * 
-<com.android.common.baseui.baselabelview.LabelImageView
-    android:id="@+id/image1"
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    android:scaleType="centerCrop"
-    android:src="@mipmap/image1"
-    app:label_backgroundColor="#C2185B"
+<com.android.common.baseui.labelview.LabelTextView
+    android:id="@+id/text"
+    android:layout_width="wrap_content"
+    android:layout_height="48dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="8dp"
+    android:background="#212121"
+    android:gravity="center"
+    android:padding="16dp"
+    android:text="TextView"
+    android:textColor="#ffffff"
+    app:label_backgroundColor="#03A9F4"
+    app:label_distance="15dp"
     app:label_orientation="LEFT_TOP"
-    app:label_text="CHINA" />
- * 
+    app:label_text="POP"
+    app:label_textSize="10sp" />
  */
-public class LabelImageView extends ImageView {
+public class LabelTextView extends TextView {
 
     LabelViewHelper utils;
 
-    public LabelImageView(Context context) {
+    public LabelTextView(Context context) {
         this(context, null);
     }
 
-    public LabelImageView(Context context, AttributeSet attrs) {
+    public LabelTextView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public LabelImageView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LabelTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         utils = new LabelViewHelper(context, attrs, defStyleAttr);
     }
@@ -67,11 +72,11 @@ public class LabelImageView extends ImageView {
         return utils.getLabelDistance();
     }
 
-    public boolean isLabelVisual() {
+    public boolean isLabelEnable() {
         return utils.isLabelVisual();
     }
 
-    public void setLabelVisual(boolean enable) {
+    public void setLabelEnable(boolean enable) {
         utils.setLabelVisual(this, enable);
     }
 
@@ -97,10 +102,6 @@ public class LabelImageView extends ImageView {
 
     public void setLabelBackgroundColor(int backgroundColor) {
         utils.setLabelBackgroundColor(this, backgroundColor);
-    }
-
-    public void setLabelBackgroundAlpha(int alpha) {
-        utils.setLabelBackgroundAlpha(this, alpha);
     }
 
     public String getLabelText() {

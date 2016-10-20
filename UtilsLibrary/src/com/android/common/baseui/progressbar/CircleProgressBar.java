@@ -18,6 +18,20 @@ import com.common.android.utilslibrary.R;
  * @author Todd Davies
  *         <p/>
  *         See MIT-LICENSE.txt for licence details
+ 
+ <com.android.common.baseui.progressbar.CircleProgressBar   
+	    android:id="@+id/pw_spinner"     
+	    android:layout_width="120dp"    
+	    android:layout_height="120dp"   
+	    android:layout_below="@id/search_bar"
+	    CircleProgressBar:cpbTextColor="#222"   
+	    CircleProgressBar:cpbTextSize="14sp"   
+	    CircleProgressBar:cpbRimColor="#330097D6"   
+	    CircleProgressBar:cpbBarLength="60dp"    
+	    CircleProgressBar:cpbBarColor="#0097D6"   
+	    CircleProgressBar:cpbBarWidth="5dp"   
+	    CircleProgressBar:cpbRimWidth="2dp" /> 
+ 
  */
 public class CircleProgressBar extends View {
 

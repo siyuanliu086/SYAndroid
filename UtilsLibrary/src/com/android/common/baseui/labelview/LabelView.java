@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.common.baseui.baselabelview;
+package com.android.common.baseui.labelview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

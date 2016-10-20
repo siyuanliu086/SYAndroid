@@ -1,48 +1,45 @@
-package com.android.common.baseui.baselabelview;
+package com.android.common.baseui.labelview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.widget.Button;
+import android.widget.ImageView;
 
 /**
- * @TiTle LabelButtonView.java
+ * @TiTle LabelImageView.java
  * @Package com.android.common.baseui.baselabelview
- * @Description 加标签的Button
+ * @Description
  * @Date 2016年10月17日
  * @Author siyuan
  * @Refactor 
  * @Company ISoftStone ZHHB
  * 
- <com.android.common.baseui.baselabelview.LabelButtonView
-    android:id="@+id/labelbutton"
-    android:layout_width="200dp"
-    android:layout_height="48dp"
-    android:background="#03a9f4"
-    android:gravity="center"
-    android:text="Button"
-    android:textColor="#ffffff"
+<com.android.common.baseui.baselabelview.LabelImageView
+    android:id="@+id/image1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:scaleType="centerCrop"
+    android:src="@mipmap/image1"
     app:label_backgroundColor="#C2185B"
-    app:label_distance="20dp"
-    app:label_height="20dp"
-    app:label_orientation="RIGHT_TOP"
-    app:label_text="HD"
-    app:label_textSize="12sp" />
+    app:label_orientation="LEFT_TOP"
+    app:label_text="CHINA" />
+ * 
  */
-public class LabelButtonView extends Button {
+public class LabelImageView extends ImageView {
 
     LabelViewHelper utils;
 
-    public LabelButtonView(Context context) {
+    public LabelImageView(Context context) {
         this(context, null);
     }
 
-    public LabelButtonView(Context context, AttributeSet attrs) {
+    public LabelImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public LabelButtonView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LabelImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         utils = new LabelViewHelper(context, attrs, defStyleAttr);
     }
@@ -100,6 +97,10 @@ public class LabelButtonView extends Button {
 
     public void setLabelBackgroundColor(int backgroundColor) {
         utils.setLabelBackgroundColor(this, backgroundColor);
+    }
+
+    public void setLabelBackgroundAlpha(int alpha) {
+        utils.setLabelBackgroundAlpha(this, alpha);
     }
 
     public String getLabelText() {

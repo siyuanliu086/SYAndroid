@@ -1,50 +1,48 @@
-package com.android.common.baseui.baselabelview;
+package com.android.common.baseui.labelview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.widget.TextView;
+import android.widget.Button;
 
 /**
- * @TiTle LabelTextView.java
+ * @TiTle LabelButtonView.java
  * @Package com.android.common.baseui.baselabelview
- * @Description
+ * @Description 加标签的Button
  * @Date 2016年10月17日
  * @Author siyuan
  * @Refactor 
  * @Company ISoftStone ZHHB
  * 
-<com.lid.lib.LabelTextView
-    android:id="@+id/text"
-    android:layout_width="wrap_content"
+ <com.android.common.baseui.baselabelview.LabelButtonView
+    android:id="@+id/labelbutton"
+    android:layout_width="200dp"
     android:layout_height="48dp"
-    android:layout_gravity="center"
-    android:layout_marginTop="8dp"
-    android:background="#212121"
+    android:background="#03a9f4"
     android:gravity="center"
-    android:padding="16dp"
-    android:text="TextView"
+    android:text="Button"
     android:textColor="#ffffff"
-    app:label_backgroundColor="#03A9F4"
-    app:label_distance="15dp"
-    app:label_orientation="LEFT_TOP"
-    app:label_text="POP"
-    app:label_textSize="10sp" />
+    app:label_backgroundColor="#C2185B"
+    app:label_distance="20dp"
+    app:label_height="20dp"
+    app:label_orientation="RIGHT_TOP"
+    app:label_text="HD"
+    app:label_textSize="12sp" />
  */
-public class LabelTextView extends TextView {
+public class LabelButtonView extends Button {
 
     LabelViewHelper utils;
 
-    public LabelTextView(Context context) {
+    public LabelButtonView(Context context) {
         this(context, null);
     }
 
-    public LabelTextView(Context context, AttributeSet attrs) {
+    public LabelButtonView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public LabelTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LabelButtonView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         utils = new LabelViewHelper(context, attrs, defStyleAttr);
     }
@@ -72,11 +70,11 @@ public class LabelTextView extends TextView {
         return utils.getLabelDistance();
     }
 
-    public boolean isLabelEnable() {
+    public boolean isLabelVisual() {
         return utils.isLabelVisual();
     }
 
-    public void setLabelEnable(boolean enable) {
+    public void setLabelVisual(boolean enable) {
         utils.setLabelVisual(this, enable);
     }
 
