@@ -30,7 +30,7 @@ public class DrawPassActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.utilslib_layout_draw_pwd);
-		String savePass = PreferencesUtils.getSharePreStr(mContext, "password");
+		String savePass = PreferencesUtils.getSharePreferencesString(mContext, "password");
 		
 		mTextView = (TextView) findViewById(R.id.multi_tv_token_time_hint);
 		mPwdView = (LocusPassWordView) this.findViewById(R.id.mPassWordView);
@@ -45,13 +45,13 @@ public class DrawPassActivity extends Activity {
 					return;
 				}
 				
-				String savePass = PreferencesUtils.getSharePreStr(mContext, "password");
+				String savePass = PreferencesUtils.getSharePreferencesString(mContext, "password");
 				String md5Pass = MD5.GetMD5Code(mPassword);
 				
 				// 第一次设置密码
 				if(setFlag) {
 					if(savePass.isEmpty()) {
-						PreferencesUtils.putSharePre(mContext, "password", md5Pass);
+						PreferencesUtils.putSharePreferences(mContext, "password", md5Pass);
 						mTextView.setText(R.string.utilslib_gesturepass_drawagain);
 						mPwdView.delayReset();
 					} else if(savePass.equals(md5Pass)){

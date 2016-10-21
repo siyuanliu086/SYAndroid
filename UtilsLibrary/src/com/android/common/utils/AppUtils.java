@@ -13,17 +13,20 @@ import android.app.ActivityManager.RunningTaskInfo;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
 
 /**
  * @TiTle AppUtils.java
  * @Package com.android.common.utils
- * @Description APP级别通用工具及方法（版本号、应用信息、SD卡路径、系统版本、服务运行、UUID、横竖屏）
+ * @Description APP级别通用工具及方法（版本号、应用信息、SD卡路径、系统版本、服务运行、UUID、横竖屏、
+ * 		是否系统APP、是否栈顶、根据设备cpu获取线程池大小建议）
  * @Date 2016年10月14日 
  * @Author siyuan
  * @Refactor siyuan FIX 2016-10-14
@@ -32,6 +35,9 @@ import android.webkit.MimeTypeMap;
 public class AppUtils {
 	
 	private static PackageManager pm;
+	
+	 /** recommend default thread pool size according to system available processors, {@link #getDefaultThreadPoolSize()} **/
+    public static final int DEFAULT_THREAD_POOL_SIZE = getDefaultThreadPoolSize();
 
 	/**
 	 * 创建包管理器实例.
@@ -262,4 +268,112 @@ public class AppUtils {
 		int ori = mConfiguration.orientation; // 获取屏幕方向
 		return ori == Configuration.ORIENTATION_PORTRAIT;
 	}
+	
+	/**
+     * whether context is system application
+     * 
+     * @param context
+     * @return
+     */
+    public static boolean isSystemApplication(Context context) {
+        if (context == null) {
+            return false;
+        }
+
+        return isSystemApplication(context, context.getPackageName());
+    }
+    
+    /**
+     * whether packageName is system application
+     * 
+     * @param context
+     * @param packageName
+     * @return
+     */
+    public static boolean isSystemApplication(Context context, String packageName) {
+        if (context == null) {
+            return false;
+        }
+
+        return isSystemApplication(context.getPackageManager(), packageName);
+    }
+
+    /**
+     * whether packageName is system application
+     * 
+     * @param packageManager
+     * @param packageName
+     * @return <ul>
+     *         <li>if packageManager is null, return false</li>
+     *         <li>if package name is null or is empty, return false</li>
+     *         <li>if package name not exit, return false</li>
+     *         <li>if package name exit, but not system app, return false</li>
+     *         <li>else return true</li>
+     *         </ul>
+     */
+    public static boolean isSystemApplication(PackageManager packageManager, String packageName) {
+        if (packageManager == null || packageName == null || packageName.length() == 0) {
+            return false;
+        }
+
+        try {
+            ApplicationInfo app = packageManager.getApplicationInfo(packageName, 0);
+            return (app != null && (app.flags & ApplicationInfo.FLAG_SYSTEM) > 0);
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
+    /**
+     * whether the app whost package's name is packageName is on the top of the stack
+     * <ul>
+     * <strong>Attentions:</strong>
+     * <li>You should add <strong>android.permission.GET_TASKS</strong> in manifest</li>
+     * </ul>
+     * 
+     * @param context
+     * @param packageName
+     * @return if params error or task stack is null, return null, otherwise retun whether the app is on the top of
+     *         stack
+     */
+    public static Boolean isTopActivity(Context context, String packageName) {
+        if (context == null || TextUtils.isEmpty(packageName)) {
+            return null;
+        }
+
+        ActivityManager activityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(1);
+        if (tasksInfo != null || tasksInfo.isEmpty()) {
+            return null;
+        }
+        try {
+            return packageName.equals(tasksInfo.get(0).topActivity.getPackageName());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+	
+	/**
+     * get recommend default thread pool size
+     * 
+     * @return if 2 * availableProcessors + 1 less than 8, return it, else return 8;
+     * @see {@link #getDefaultThreadPoolSize(int)} max is 8
+     */
+    public static int getDefaultThreadPoolSize() {
+        return getDefaultThreadPoolSize(8);
+    }
+
+    /**
+     * get recommend default thread pool size
+     * 
+     * @param max
+     * @return if 2 * availableProcessors + 1 less than max, return it, else return max;
+     */
+    public static int getDefaultThreadPoolSize(int max) {
+        int availableProcessors = 2 * Runtime.getRuntime().availableProcessors() + 1;
+        return availableProcessors > max ? max : availableProcessors;
+    }
+
 }
