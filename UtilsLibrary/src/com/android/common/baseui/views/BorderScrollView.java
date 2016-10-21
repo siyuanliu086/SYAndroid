@@ -1,4 +1,4 @@
-package cn.trinea.android.common.view;
+package com.android.common.baseui.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
