@@ -9,6 +9,8 @@ import java.util.GregorianCalendar;
 import android.util.Log;
 
 public class DateUtil {
+	public static String[] weekName = { "周日", "周一", "周二", "周三", "周四", "周五", "周六" };
+
 	public static String formatDateTime(Date date) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return format.format(date);
@@ -32,7 +34,8 @@ public class DateUtil {
 	}
 
 	/**
-	 * 获取当前时间  格式为yyyy-MM-dd
+	 * 获取当前时间 格式为yyyy-MM-dd
+	 * 
 	 * @return
 	 */
 	public static String getCurrentDate2() {
@@ -45,14 +48,17 @@ public class DateUtil {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
 		return format.format(translateDateTime(ms));
 	}
+
 	public static String transTimeToDateYM(String ms) {
 		SimpleDateFormat format = new SimpleDateFormat("MM月dd日");
 		return format.format(translateDateTime(ms));
 	}
+
 	public static String transTimeToDateYM(Date date) {
 		SimpleDateFormat format = new SimpleDateFormat("MM月dd日");
 		return format.format(date);
 	}
+
 	public static String transDateToDate(Date date) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
 		return format.format(date);
@@ -131,10 +137,10 @@ public class DateUtil {
 	}
 
 	public static String transDate(String date) {
-		if("".equals(date) || date == null) {
+		if ("".equals(date) || date == null) {
 			return "";
 		}
-		
+
 		SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
 		String str = "";
 		Date time = null;
@@ -419,4 +425,102 @@ public class DateUtil {
 		}
 		return season;
 	}
+
+	public static int getYear() {
+		return Calendar.getInstance().get(Calendar.YEAR);
+	}
+
+	public static int getMonth() {
+		return Calendar.getInstance().get(Calendar.MONTH) + 1;
+	}
+
+	public static int getCurrentMonthDay() {
+		return Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+	}
+
+	public static int getWeekDay() {
+		return Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+	}
+
+	public static int getHour() {
+		return Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+	}
+
+	public static int getMinute() {
+		return Calendar.getInstance().get(Calendar.MINUTE);
+	}
+    
+    /**
+     * 通过年份和月份 得到当月的日子
+     * 
+     * @param year
+     * @param month
+     * @return
+     */
+    public static int getMonthDays(int year, int month) {
+		month++;
+		switch (month) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12: 
+		    return 31;
+		case 4:
+		case 6:
+		case 9:
+		case 11: 
+		    return 30;
+		case 2:
+			if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)){
+				return 29;
+			}else{
+				return 28;
+			}
+		default:
+			return  -1;
+		}
+    }
+    
+    /**
+     * 返回当前月份1号位于周几
+     * @param year 年份
+     * @param month 月份，传入系统获取的，不需要正常的
+     * @return 日：1		一：2		二：3		三：4		四：5		五：6		六：7
+     */
+    public static int getFirstDayWeek(int year, int month){
+    	Calendar calendar = Calendar.getInstance();
+    	calendar.set(year, month, 1);
+    	return calendar.get(Calendar.DAY_OF_WEEK);
+    }
+    
+    /**
+     * 根据列明获取周
+     * @param column
+     * @return
+     */
+    public static String getWeekName(int column){
+    	switch(column){
+    	case 0:
+    		return "周日";
+    	case 1:
+    		return "周一";
+    	case 2:
+    		return "周二";
+    	case 3:
+    		return "周三";
+    	case 4:
+    		return "周四";
+    	case 5:
+    		return "周五";
+    	case 6:
+    		return "周六";
+    	default :
+    			return "";
+    	}
+    }
+    
+
 }

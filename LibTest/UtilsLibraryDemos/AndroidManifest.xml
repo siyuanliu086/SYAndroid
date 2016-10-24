@@ -22,6 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity android:name="com.siyuan.utilslibrarydemos.canlendar.CanlendarMainActivity"></activity>
+        <activity android:name="com.siyuan.utilslibrarydemos.canlendar.ADCircleCalendarActivity"></activity>
+        <activity android:name="com.siyuan.utilslibrarydemos.canlendar.CircleCalendarActivity"></activity>
+        <activity android:name="com.siyuan.utilslibrarydemos.canlendar.GridCalendarActivity"></activity>
     </application>
 
 </manifest>

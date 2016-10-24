@@ -59,4 +59,26 @@
 	    LabelView:label_orientation="LEFT_TOP"
 	    LabelView:label_text="POP"
 	    LabelView:label_textSize="10sp" />
+    
+    <com.android.common.baseui.views.IconFontTextView
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_bar"
+	    android:layout_toRightOf="@id/text"
+        android:textColor="@color/utilslib_white"
+        android:layout_margin="@dimen/utilslib_margin10"
+        android:background="@color/utilslib_theme_color_green"
+        android:text="@string/utilslib_icon_arraw_left"
+        android:textSize="20sp"/>
+    
+    <Button 
+        android:id="@+id/canlendar"
+        android:layout_below="@id/pw_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="跳转日历"
+        android:onClick="onClick"/>
+    
 </RelativeLayout>
