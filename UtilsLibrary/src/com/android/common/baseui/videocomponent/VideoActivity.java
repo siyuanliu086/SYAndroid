@@ -1,4 +1,4 @@
-package com.android.common.baseui.videotookit;
+package com.android.common.baseui.videocomponent;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,8 +16,8 @@ import android.view.View;
 import com.android.common.baseui.BaseActivity;
 import com.android.common.baseui.views.NumberProgressBar;
 import com.android.common.baseui.views.TitleBarView;
-import com.android.common.baseui.webviewtookit.AttachModel;
-import com.android.common.baseui.webviewtookit.DownloadUtil;
+import com.android.common.baseui.webviewcomponent.AttachModel;
+import com.android.common.baseui.webviewcomponent.DownloadUtil;
 import com.android.common.utils.MD5;
 import com.android.common.utils.ToastUtil;
 import com.common.android.utilslibrary.R;

@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/utilslib_background_colorfa" >
 
-    <com.android.common.baseui.webviewtookit.JSWebView
+    <com.android.common.baseui.webviewcomponent.JSWebView
         android:id="@+id/jsview_jv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

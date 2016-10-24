@@ -1,4 +1,4 @@
-package com.android.common.baseui.webviewtookit;
+package com.android.common.baseui.webviewcomponent;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.android.common.baseui.BaseActivity;
-import com.android.common.baseui.webviewtookit.JSWebView.WebViewTitle;
+import com.android.common.baseui.webviewcomponent.JSWebView.WebViewTitle;
 import com.common.android.utilslibrary.R;
 
 /**

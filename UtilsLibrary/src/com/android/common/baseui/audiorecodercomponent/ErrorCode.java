@@ -1,4 +1,4 @@
-package com.android.common.baseui.audiorecodertoolkit;
+package com.android.common.baseui.audiorecodercomponent;
 
 import android.content.Context;
 import android.content.res.Resources.NotFoundException;

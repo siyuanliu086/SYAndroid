@@ -1,4 +1,4 @@
-package com.android.common.baseui.webviewtookit;
+package com.android.common.baseui.webviewcomponent;
 
 import java.io.File;
 import java.io.FileOutputStream;

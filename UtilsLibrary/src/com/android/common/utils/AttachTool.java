@@ -9,9 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.android.common.baseui.videotookit.VideoActivity;
-import com.android.common.baseui.webviewtookit.AttachModel;
-import com.android.common.baseui.webviewtookit.WebViewActivity;
+import com.android.common.baseui.videocomponent.VideoActivity;
+import com.android.common.baseui.webviewcomponent.AttachModel;
+import com.android.common.baseui.webviewcomponent.WebViewActivity;
 import com.android.common.imagescan.ImagePagerActivity;
 import com.common.android.utilslibrary.R;
 

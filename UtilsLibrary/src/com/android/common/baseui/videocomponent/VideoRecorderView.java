@@ -1,4 +1,4 @@
-package com.android.common.baseui.videotookit;
+package com.android.common.baseui.videocomponent;
 
 import java.io.File;
 import java.io.IOException;

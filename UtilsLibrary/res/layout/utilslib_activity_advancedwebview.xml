@@ -14,7 +14,7 @@
         android:layout_margin="6dp"
         android:visibility="gone"/>
 
-    <com.android.common.baseui.webviewtookit.AdvancedWebView
+    <com.android.common.baseui.webviewcomponent.AdvancedWebView
         android:id="@+id/fragment_wv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

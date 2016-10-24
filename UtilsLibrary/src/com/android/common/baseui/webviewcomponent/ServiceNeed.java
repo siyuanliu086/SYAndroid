@@ -1,4 +1,4 @@
-package com.android.common.baseui.webviewtookit;
+package com.android.common.baseui.webviewcomponent;
 
 import android.webkit.JavascriptInterface;
 

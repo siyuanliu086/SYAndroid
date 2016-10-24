@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_video_cancal" >
 
-        <com.android.common.baseui.videotookit.VideoRecorderView
+        <com.android.common.baseui.videocomponent.VideoRecorderView
             android:id="@+id/recoder"
             android:layout_width="fill_parent"
             android:layout_height="200dp"

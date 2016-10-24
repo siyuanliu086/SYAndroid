@@ -1,4 +1,4 @@
-package com.android.common.baseui.audiorecodertoolkit;
+package com.android.common.baseui.audiorecodercomponent;
 
 import android.app.Activity;
 import android.graphics.Rect;

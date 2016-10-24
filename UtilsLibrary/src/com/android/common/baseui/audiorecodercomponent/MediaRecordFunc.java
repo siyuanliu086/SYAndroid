@@ -1,4 +1,4 @@
-package com.android.common.baseui.audiorecodertoolkit;
+package com.android.common.baseui.audiorecodercomponent;
 
 import java.io.File;
 import java.io.IOException;
