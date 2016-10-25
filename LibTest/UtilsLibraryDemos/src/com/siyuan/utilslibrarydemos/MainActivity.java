@@ -26,7 +26,9 @@ public class MainActivity extends Activity {
 	public void onClick(View view) {
 		if(view.getId() == R.id.canlendar) {
 			startActivity(new Intent(mContext, CanlendarMainActivity.class));
-		} 
+		} else if(view.getId() == R.id.swipelist) {
+			startActivity(new Intent(mContext, SwipeMenuListActivity.class));
+		}
 	}
 
 }
