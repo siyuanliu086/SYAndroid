@@ -94,4 +94,5 @@ public class DefaultDayTheme implements IDayTheme {
     public int smoothMode() {
         return 0;
     }
+
 }

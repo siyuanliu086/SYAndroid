@@ -37,7 +37,7 @@ public class CircleMonthView extends MonthView {
     }
 
     @Override
-    protected void drawBG(Canvas canvas, int column, int row, int day) {
+    protected void drawBG(Canvas canvas, int column, int row, int year,int month, int day) {
         if(day == selDay){
             //绘制背景色矩形
             float startRecX = columnSize * column + 1;

@@ -10,6 +10,7 @@ import android.util.Log;
 
 public class DateUtil {
 	public static String[] weekName = { "周日", "周一", "周二", "周三", "周四", "周五", "周六" };
+	public static String[] monthName = { "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" };
 
 	public static String formatDateTime(Date date) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -520,6 +521,15 @@ public class DateUtil {
     	default :
     			return "";
     	}
+    }
+    
+    /**
+     * 根据列明获取周
+     * @param column
+     * @return
+     */
+    public static String getMonthName(int month){
+    	return monthName[month];
     }
     
 

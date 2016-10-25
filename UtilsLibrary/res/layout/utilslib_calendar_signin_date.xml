@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
@@ -10,21 +10,14 @@
         android:id="@+id/utilslib_calendar_icon_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/utilslib_white"
-        android:layout_marginRight="@dimen/utilslib_margin10"
-        android:background="@color/utilslib_theme_color_green"
+        android:textColor="#AAAAAA"
+        android:layout_alignParentLeft="true"
         android:text="@string/utilslib_icon_arraw_left"
         android:layout_gravity="left|center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:textSize="20sp"/>
 
-    <TextView
-        android:id="@+id/utilslib_calendar_tv_year"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="13dp"
-        android:text="2016年"
-        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/utilslib_calendar_tv_month"
@@ -32,17 +25,21 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="3dp"
-        android:text="8月"
+        android:layout_centerInParent="true"
+        android:text="十月"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:textSize="20sp" />
 
     <com.android.common.baseui.views.IconFontTextView
         android:id="@+id/utilslib_calendar_icon_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/utilslib_white"
-        android:layout_marginLeft="@dimen/utilslib_margin10"
-        android:background="@color/utilslib_theme_color_green"
+        android:textColor="#AAAAAA"
         android:text="@string/utilslib_icon_arraw_right"
         android:layout_gravity="right|center_vertical"
+        android:layout_alignParentRight="true"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:textSize="20sp"/>
-</LinearLayout>
+</RelativeLayout>

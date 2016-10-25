@@ -8,31 +8,31 @@ import android.graphics.Color;
 /**
  * Created by Administrator on 2016/7/31.
  */
-public class DefaultWeekTheme implements IWeekTheme {
+public class SinginWeekTheme implements IWeekTheme {
 	int dip42;
 	
-	public DefaultWeekTheme(Context context) {
+	public SinginWeekTheme(Context context) {
 		dip42 = DensityUtil.dip2px(context, 42);
 	}
 	
     @Override
     public int colorTopLinen() {
-        return Color.parseColor("#CCE4F2");
+        return Color.parseColor("#cccccc");
     }
 
     @Override
     public int colorBottomLine() {
-        return Color.parseColor("#CCE4F2");
+        return Color.parseColor("#ffffff");
     }
 
     @Override
     public int colorWeekday() {
-        return Color.parseColor("#1FC2F3");
+        return Color.parseColor("#333333");
     }
 
     @Override
     public int colorWeekend() {
-        return Color.parseColor("#fa4451");
+        return Color.parseColor("#333333");
     }
 
     @Override
@@ -47,6 +47,6 @@ public class DefaultWeekTheme implements IWeekTheme {
 
     @Override
     public int sizeText() {
-        return 22;
+        return 20;
     }
 }

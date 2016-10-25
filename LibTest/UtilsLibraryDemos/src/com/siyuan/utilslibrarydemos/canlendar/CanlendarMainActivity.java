@@ -12,7 +12,7 @@ import com.siyuan.utilslibrarydemos.R;
 
 public class CanlendarMainActivity extends Activity {
     private ListView listView;
-    private String[] items = new String[]{"GridCalendarView","CircleCalendarView","ADCircleCalendarView"};
+    private String[] items = new String[]{"GridCalendarView","CircleCalendarView","ADCircleCalendarView","南通签到"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,9 @@ public class CanlendarMainActivity extends Activity {
                     case 2:
                         intent = new Intent(CanlendarMainActivity.this, ADCircleCalendarActivity.class);
                         break;
+                    case 3:
+                    	intent = new Intent(CanlendarMainActivity.this, SigninCalendarActivity.class);
+                    	break;
                     default:
                         break;
                 }

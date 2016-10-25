@@ -8,16 +8,16 @@ import android.graphics.Color;
 /**
  * Created by Administrator on 2016/8/9.
  */
-public class ADCircleDayTheme implements IDayTheme {
-	int dip42;
+public class SinginDayTheme implements IDayTheme {
+	int dip36;
 	
-	public ADCircleDayTheme(Context context) {
-		dip42 = DensityUtil.dip2px(context, 42);
+	public SinginDayTheme(Context context) {
+		dip36 = DensityUtil.dip2px(context, 36);
 	}
 	
     @Override
     public int colorSelectBG() {
-        return Color.parseColor("#38C0C3");
+        return Color.parseColor("#7CBD00");
     }
 
     @Override
@@ -37,12 +37,12 @@ public class ADCircleDayTheme implements IDayTheme {
 
     @Override
     public int colorWeekday() {
-        return Color.parseColor("#4F4F4F");
+        return Color.parseColor("#888888");
     }
 
     @Override
     public int colorWeekend() {
-        return Color.parseColor("#BEBEBE");
+        return Color.parseColor("#cccccc");
     }
 
     @Override
@@ -82,17 +82,16 @@ public class ADCircleDayTheme implements IDayTheme {
 
     @Override
     public int dateHeight() {
-        return dip42;
+        return dip36;
     }
 
     @Override
     public int colorLine() {
-        return Color.parseColor("#CBCBCB");
+        return Color.parseColor("#FFFFFF");
     }
 
     @Override
     public int smoothMode() {
-        return 0;
+        return 1;
     }
-
 }

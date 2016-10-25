@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         
+        <activity android:name="com.siyuan.utilslibrarydemos.canlendar.SigninCalendarActivity"></activity>
         <activity android:name="com.siyuan.utilslibrarydemos.canlendar.CanlendarMainActivity"></activity>
         <activity android:name="com.siyuan.utilslibrarydemos.canlendar.ADCircleCalendarActivity"></activity>
         <activity android:name="com.siyuan.utilslibrarydemos.canlendar.CircleCalendarActivity"></activity>

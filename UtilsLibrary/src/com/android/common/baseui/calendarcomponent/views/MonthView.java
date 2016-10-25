@@ -39,6 +39,7 @@ public abstract class MonthView extends View {
     private int indexMonth;
     private int width;
     protected List<CalendarInfo> calendarInfos = new ArrayList<CalendarInfo>();
+    protected List<String> selectedDays = new ArrayList<String>();
     private int downX = 0,downY = 0;
     private Scroller mScroller;
     private int smoothMode;
@@ -104,7 +105,7 @@ public abstract class MonthView extends View {
             column = (day+weekNumber - 1) % 7;
             row = (day+weekNumber - 1) / 7;
             daysString[row][column]=day + 1;
-            drawBG(canvas,column,row,daysString[row][column]);
+            drawBG(canvas,column,row,year,month,daysString[row][column]);
             drawDecor(canvas,column,row,year,month,daysString[row][column]);
             drawRest(canvas,column,row,year,month,daysString[row][column]);
             drawText(canvas,column,row,year,month,daysString[row][column]);
@@ -117,7 +118,7 @@ public abstract class MonthView extends View {
      */
     protected abstract void drawLines(Canvas canvas,int rowsCount);
 
-    protected abstract void drawBG(Canvas canvas,int column,int row,int day);
+    protected abstract void drawBG(Canvas canvas,int column,int row,int year,int month,int day);
 
     protected abstract void drawDecor(Canvas canvas,int column,int row,int year,int month,int day);
 
@@ -234,6 +235,20 @@ public abstract class MonthView extends View {
         }
         return "";
     }
+    
+    public void setSelectedDays(List<String> selectedDays) {
+    	this.selectedDays = selectedDays;
+    	invalidate();
+    }
+    
+    protected boolean isSelectedDay(int year, int month, int day) {
+    	StringBuffer sb = new StringBuffer();
+    	sb.append(year).append("-").append(month).append("-").append(day);
+    	if(selectedDays.contains(sb.toString())) {
+    		return true;
+    	}
+		return false;
+	}
 
     /**
      * 执行点击事件

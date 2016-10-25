@@ -38,7 +38,7 @@ public class ADCircleMonthView extends MonthView {
     }
 
     @Override
-    protected void drawBG(Canvas canvas, int column, int row, int day) {
+    protected void drawBG(Canvas canvas, int column, int row, int year, int month, int day) {
         float startRecX = columnSize * column + 1;
         float startRecY = rowSize * row +1;
         float endRecX = startRecX + columnSize - 2 * 1;
