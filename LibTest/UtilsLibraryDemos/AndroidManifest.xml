@@ -29,6 +29,7 @@
         <activity android:name="com.siyuan.utilslibrarydemos.canlendar.CircleCalendarActivity"></activity>
         <activity android:name="com.siyuan.utilslibrarydemos.canlendar.GridCalendarActivity"></activity>
         <activity android:name="com.siyuan.utilslibrarydemos.SwipeMenuListActivity"></activity>
+        <activity android:name="com.siyuan.utilslibrarydemos.SlideSwitchActivity"></activity>
     </application>
 
 </manifest>

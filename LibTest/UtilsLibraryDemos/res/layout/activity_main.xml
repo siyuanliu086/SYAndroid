@@ -79,6 +79,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="跳转日历"
+        android:layout_margin="10dp"
         android:onClick="onClick"/>
     
     <Button 
@@ -87,7 +88,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:layout_toRightOf="@id/canlendar"
+        android:layout_alignTop="@id/canlendar"
+        android:layout_marginLeft="10dp"
         android:text="SwipeMenuListActivity"
+        android:onClick="onClick"/>
+    <Button 
+        android:id="@+id/slideSwitch"
+        android:layout_below="@id/canlendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignTop="@id/swipelist"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/swipelist"
+        android:text="SlideSwitch"
         android:onClick="onClick"/>
     
 </RelativeLayout>

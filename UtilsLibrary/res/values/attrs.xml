@@ -48,8 +48,8 @@
             <enum name="RIGHT_BOTTOM" value="4" />
         </attr>
     </declare-styleable>
-    
-    <!-- ProgressWheel  -->
+
+    <!-- ProgressWheel -->
     <declare-styleable name="CircleProgressBar">
         <attr name="cpbText" format="string" />
         <attr name="cpbTextColor" format="color" />
@@ -65,6 +65,19 @@
         <attr name="cpbDelayMillis" format="dimension" />
         <attr name="cpbContourColor" format="color" />
         <attr name="cpbContourSize" format="float" />
+    </declare-styleable>
+    
+    <!-- slideswitchview 开关、切换 -->
+    <declare-styleable name="slideswitchview">
+        <attr name="slideswitchThemeColor" format="color" />
+        <attr name="slideswitchIsOpen" format="boolean" />
+        <attr name="slideswitchShape">
+            <enum name="rect" value="1" />
+            <enum name="circle" value="2" />
+        </attr>
+        <attr name="slideswitchTextOpen" format="string"></attr>
+        <attr name="slideswitchTextClose" format="string"></attr>
+        <attr name="slideswitchTextSize" format="dimension"></attr>
     </declare-styleable>
 
 </resources>

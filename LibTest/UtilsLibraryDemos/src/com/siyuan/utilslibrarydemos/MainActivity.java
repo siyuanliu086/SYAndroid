@@ -28,6 +28,8 @@ public class MainActivity extends Activity {
 			startActivity(new Intent(mContext, CanlendarMainActivity.class));
 		} else if(view.getId() == R.id.swipelist) {
 			startActivity(new Intent(mContext, SwipeMenuListActivity.class));
+		} else if(view.getId() == R.id.slideSwitch) {
+			startActivity(new Intent(mContext, SlideSwitchActivity.class));
 		}
 	}
 
