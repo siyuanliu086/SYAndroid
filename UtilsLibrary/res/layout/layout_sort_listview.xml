@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/utilslib_white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/utilslib_sortlist_serachbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" 
+        android:paddingTop="8dp">
+
+        <com.android.common.baseui.views.SearchView
+            android:id="@+id/utilslib_sortlist_serach_name"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:gravity="left|center"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="@drawable/utilslib_shape_searchbar_bg"
+            android:drawableLeft="@drawable/utilslib_icon_search"
+            android:hint="@string/utilslib_common_search"
+            android:maxLength="20"
+            android:paddingBottom="5dp"
+            android:paddingLeft="@dimen/utilslib_margin10"
+            android:paddingTop="5dp"
+            android:paddingRight="6dp"
+            android:singleLine="true"
+            android:focusableInTouchMode="true"
+            android:textColor="@color/utilslib_deep_gray"
+            android:textSize="@dimen/system_content16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/utilslib_sortlist_current_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5dp"
+        android:paddingBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/utilslib_sortlist_current_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/utilslib_text_black9"
+            android:textSize="@dimen/system_content14"
+            android:layout_marginLeft="10dp"/>
+
+        <com.android.common.baseui.views.IconFontTextView
+            android:id="@+id/utilslib_sortlist_current_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:text="@string/utilslib_icon_location"
+            android:textColor="@color/utilslib_text_black9"
+            android:textSize="@dimen/system_content16" />
+
+        <TextView
+            android:id="@+id/utilslib_sortlist_current_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:textSize="@dimen/system_content14"
+            android:textColor="@color/utilslib_text_black9"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/utilslib_sortlist_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ListView
+            android:id="@+id/utilslib_sortlist_listview_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/utilslib_sortlist_tv_noresult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/utilslib_common_nodata"
+            android:textColor="@color/utilslib_text_black9"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/utilslib_sortlist_sidebar_dialog"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@color/utilslib_theme_color_green"
+            android:gravity="center"
+            android:textColor="@color/utilslib_white"
+            android:textSize="30sp"
+            android:visibility="invisible" />
+
+        <com.android.common.baseui.views.SideBar
+            android:id="@+id/utilslib_sortlist_sidrbar"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/utilslib_background_colorfa" />
+    </RelativeLayout>
+
+</LinearLayout>

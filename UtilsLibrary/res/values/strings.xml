@@ -22,6 +22,9 @@
     <!-- load failed and retry -->
     <string name="utilslib_icon_no_data">&#xe609;</string>
     
+    <!-- location -->
+    <string name="utilslib_icon_location">&#xe60b;</string>
+    
     
     <string name="utilslib_common_net_unavaiable">网络连接不可用</string>
     <string name="utilslib_common_loading">正在加载</string>

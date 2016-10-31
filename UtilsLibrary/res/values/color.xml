@@ -15,8 +15,7 @@
     <color name="utilslib_background_colorfd">#FDFDFE</color>
     <!-- 黑色[主要用于标签性质的文字] -->
     <color name="utilslib_text_black3">#333333</color>
-    <color name="utilslib_text_hint9">#999999</color>
-    <color name="utilslib_text_deep_black31">#313131</color>
+    <color name="utilslib_text_black9">#999999</color>
     <!-- 上下描边颜色   通用这个 -->
     <color name="utilslib_lines_color">#E3E3E3</color>
     
