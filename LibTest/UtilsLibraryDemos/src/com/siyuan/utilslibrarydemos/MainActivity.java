@@ -30,6 +30,8 @@ public class MainActivity extends Activity {
 			startActivity(new Intent(mContext, SwipeMenuListActivity.class));
 		} else if(view.getId() == R.id.slideSwitch) {
 			startActivity(new Intent(mContext, SlideSwitchActivity.class));
+		} else if(view.getId() == R.id.sortlistview) {
+			startActivity(new Intent(mContext, SortListViewActivity.class));
 		}
 	}
 

@@ -30,6 +30,7 @@
         <activity android:name="com.siyuan.utilslibrarydemos.canlendar.GridCalendarActivity"></activity>
         <activity android:name="com.siyuan.utilslibrarydemos.SwipeMenuListActivity"></activity>
         <activity android:name="com.siyuan.utilslibrarydemos.SlideSwitchActivity"></activity>
+        <activity android:name="com.siyuan.utilslibrarydemos.SortListViewActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 package com.android.common.baseui.views;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
@@ -13,6 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.CycleInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
+
 import com.common.android.utilslibrary.R;
 
 /**
@@ -21,12 +21,10 @@ import com.common.android.utilslibrary.R;
  * @Description 点击输入框右侧清空图标，可清除输入框内所有内容
  * @Date 2016年10月19日
  * @Author siyuan
- * @Refactor 
+ * @Refactor FIX siyuan 2016-10-31
  * @Company ISoftStone ZHHB
  */
-@SuppressLint("ClickableViewAccessibility")
-public class SearchView extends EditText implements  
-        OnFocusChangeListener, TextWatcher { 
+public class SearchView extends EditText implements OnFocusChangeListener, TextWatcher { 
 	/**
 	 * 删除按钮的引用
 	 */
@@ -73,6 +71,9 @@ public class SearchView extends EditText implements
                         - getPaddingRight() - mClearDrawable.getIntrinsicWidth()) 
                         && (event.getX() < ((getWidth() - getPaddingRight())));
                 if (touchable) { 
+                	if(onSearchListener != null) {
+                		onSearchListener.onClearClick();
+                	}
                     this.setText(""); 
                 } 
             } 
@@ -119,8 +120,8 @@ public class SearchView extends EditText implements
  
     @Override 
     public void afterTextChanged(Editable s) { 
-         if(textChangedListener != null) {
-        	 textChangedListener.afterTextChanged(s.toString());
+         if(onSearchListener != null) {
+        	 onSearchListener.afterTextChanged(s.toString());
          }
     } 
     
@@ -128,7 +129,7 @@ public class SearchView extends EditText implements
     /**
      * 设置晃动动画
      */
-    public void setShakeAnimation(){
+    public void setShakeAnimation() {
     	this.setAnimation(shakeAnimation(5));
     }
     
@@ -146,12 +147,13 @@ public class SearchView extends EditText implements
     }
  
     // 回调接口
-    private OnTextChangedListener textChangedListener;
-    public interface OnTextChangedListener {
+    private OnSearchListener onSearchListener;
+    public interface OnSearchListener {
     	void afterTextChanged(String text);
+    	void onClearClick();
     }
-    public void setOnTextChangedListener(OnTextChangedListener listener) {
-    	textChangedListener = listener;
+    public void setOnOnSearchListener(OnSearchListener listener) {
+    	onSearchListener = listener;
     }
  
 }
