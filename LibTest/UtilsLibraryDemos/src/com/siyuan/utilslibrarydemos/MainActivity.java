@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.android.common.baseui.alertview.AlertView;
 import com.android.common.baseui.progressbar.CircleProgressBar;
+import com.android.common.utils.ToastUtil;
 import com.siyuan.utilslibrarydemos.canlendar.CanlendarMainActivity;
 
 public class MainActivity extends Activity {
@@ -32,6 +34,35 @@ public class MainActivity extends Activity {
 			startActivity(new Intent(mContext, SlideSwitchActivity.class));
 		} else if(view.getId() == R.id.sortlistview) {
 			startActivity(new Intent(mContext, SortListViewActivity.class));
+		} else if(view.getId() == R.id.alertview1) {
+			//或者builder模式创建
+			new AlertView.Builder().setContext(mContext)
+				.setStyle(AlertView.Style.ActionSheet)
+				.setTitle("选择操作")
+				.setMessage(null)
+				.setCancelText("取消")
+				.setDestructive("拍照", "从相册中选择")
+				.setOthers(null)
+				.setOnItemClickListener(new AlertView.OnItemClickListener() {
+					
+					@Override
+					public void onItemClick(Object o, int position) {
+						
+					}
+				})
+				.build()
+				.show();
+		} else if(view.getId() == R.id.alertview2) {
+			new AlertView("生活小贴士", "天凉了，早上喝一杯热水", null, new String[]{"确定"}, null, mContext, 
+	                AlertView.Style.Alert, null).show();
+		} else if(view.getId() == R.id.alertview3) {
+			new AlertView("上传头像", null, "取消", null,
+	                new String[]{"拍照", "从相册中选择"},
+	                this, AlertView.Style.ActionSheet, new AlertView.OnItemClickListener(){
+	                    public void onItemClick(Object o,int position){
+	                        ToastUtil.showShortToast(mContext, "点击了第" + position + "个");
+	                    }
+	                }).show();
 		}
 	}
 

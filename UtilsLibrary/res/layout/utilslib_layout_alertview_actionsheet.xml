@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/loAlertHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/utilslib_alert_bg_actionsheet_header"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvAlertTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/utilslib_42dp"
+            android:gravity="center"
+            android:textColor="@color/utilslib_text_black3"
+            android:textSize="@dimen/system_content16" />
+
+        <TextView
+            android:id="@+id/tvAlertMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/utilslib_margin10"
+            android:gravity="center"
+            android:textColor="@color/utilslib_text_black3"
+            android:textSize="@dimen/system_content14" />
+
+        <ListView
+            android:id="@+id/alertButtonListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@null"
+            android:listSelector="@drawable/utilslib_alert_bg_alertbutton_none"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAlertCancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/utilslib_42dp"
+        android:layout_marginTop="@dimen/utilslib_margin10"
+        android:background="@drawable/utilslib_alert_bg_actionsheet_cancel"
+        android:clickable="true"
+        android:gravity="center"
+        android:textColor="@color/utilslib_text_black3"
+        android:textSize="@dimen/system_content14"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</LinearLayout>

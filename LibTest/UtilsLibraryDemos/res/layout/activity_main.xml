@@ -115,4 +115,34 @@
         android:text="SortListView"
         android:onClick="onClick"/>
     
+    <Button 
+        android:id="@+id/alertview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignTop="@id/sortlistview"
+        android:layout_toRightOf="@id/sortlistview"
+        android:text="alertview1"
+        android:onClick="onClick"/>
+    
+    <Button 
+        android:id="@+id/alertview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignTop="@id/sortlistview"
+        android:layout_toRightOf="@id/alertview1"
+        android:text="alertview2"
+        android:onClick="onClick"/>
+    
+    <Button 
+        android:id="@+id/alertview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignTop="@id/sortlistview"
+        android:layout_toRightOf="@id/alertview2"
+        android:text="alertview3"
+        android:onClick="onClick"/>
+    
 </RelativeLayout>

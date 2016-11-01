@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/utilslib_white" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/utilslib_line_divier"
+        android:background="@color/utilslib_background_colorfd" />
+
+    <TextView
+        android:id="@+id/tvAlert"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:textColor="@color/utilslib_text_black3"
+        android:textSize="@dimen/system_content14" />
+
+</LinearLayout>

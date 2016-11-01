@@ -70,7 +70,7 @@ public class SortListView extends LinearLayout {
 	}
 
 	protected void initView() {
-		LayoutInflater.from(mContext).inflate(R.layout.layout_sort_listview, this);
+		LayoutInflater.from(mContext).inflate(R.layout.utilslib_layout_sort_listview, this);
 		// 搜索框
 		searchBarLayout = (LinearLayout) findViewById(R.id.utilslib_sortlist_serachbar);
 		mClearEditText = (SearchView) findViewById(R.id.utilslib_sortlist_serach_name);
