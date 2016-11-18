@@ -8,6 +8,8 @@ import android.view.View;
 
 import com.android.common.baseui.alertview.AlertView;
 import com.android.common.baseui.progressbar.CircleProgressBar;
+import com.android.common.baseui.views.BadgeView;
+import com.android.common.baseui.views.SearchView;
 import com.android.common.utils.ToastUtil;
 import com.siyuan.utilslibrarydemos.canlendar.CanlendarMainActivity;
 
@@ -23,6 +25,11 @@ public class MainActivity extends Activity {
 		CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.pw_spinner);
 		circleProgressBar.setProgress(120);
 		circleProgressBar.setText("AQI 120");
+		
+		SearchView searchView = (SearchView) findViewById(R.id.search_bar);
+		BadgeView badge = new BadgeView(this, searchView);
+		badge.setText("1");
+		badge.show();
 	}
 	
 	public void onClick(View view) {

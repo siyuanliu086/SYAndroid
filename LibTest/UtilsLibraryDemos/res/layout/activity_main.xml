@@ -10,28 +10,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.siyuan.utilslibrarydemos.MainActivity" >
     
-    <com.android.common.baseui.views.SearchView
-        android:id="@+id/search_bar"  
+    <LinearLayout 
+        android:id="@+id/search_bar_layout"  
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:background="@drawable/utilslib_shape_searchbar_bg"
-        android:drawableLeft="@drawable/utilslib_icon_search"
-        android:drawablePadding="@dimen/utilslib_margin6"
-        android:maxLength="20"
-        android:hint="@string/utilslib_common_search"
-        android:padding="@dimen/utilslib_margin6"
-        android:singleLine="true"
-        android:textColor="@color/utilslib_deep_gray"
-        android:textSize="@dimen/system_content14"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+            <com.android.common.baseui.views.SearchView
+		        android:id="@+id/search_bar"  
+		        android:layout_width="match_parent"
+		        android:layout_height="40dp"
+		        android:layout_gravity="center_horizontal"
+		        android:layout_margin="10dp"
+		        android:background="@drawable/utilslib_shape_searchbar_bg"
+		        android:drawableLeft="@drawable/utilslib_icon_search"
+		        android:drawablePadding="@dimen/utilslib_margin6"
+		        android:maxLength="20"
+		        android:hint="@string/utilslib_common_search"
+		        android:padding="@dimen/utilslib_margin6"
+		        android:singleLine="true"
+		        android:textColor="@color/utilslib_deep_gray"
+		        android:textSize="@dimen/system_content14"/>
+        
+    </LinearLayout>
+
     
     
     <com.android.common.baseui.progressbar.CircleProgressBar   
 	    android:id="@+id/pw_spinner"     
 	    android:layout_width="120dp"    
 	    android:layout_height="120dp"   
-	    android:layout_below="@id/search_bar"
+	    android:layout_below="@id/search_bar_layout"
 	    CircleProgressBar:cpbTextColor="#222"   
 	    CircleProgressBar:cpbTextSize="14sp"   
 	    CircleProgressBar:cpbRimColor="#330097D6"   
@@ -50,7 +59,7 @@
 	    android:gravity="center"
 	    android:paddingLeft="28dp"
 	    android:paddingRight="28dp"
-	    android:layout_below="@id/search_bar"
+	    android:layout_below="@id/search_bar_layout"
 	    android:layout_toRightOf="@id/pw_spinner"
 	    android:text="TextView"
 	    android:textColor="#ffffff"
@@ -64,7 +73,7 @@
         android:id="@+id/left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_bar"
+        android:layout_below="@id/search_bar_layout"
 	    android:layout_toRightOf="@id/text"
         android:textColor="@color/utilslib_white"
         android:layout_margin="@dimen/utilslib_margin10"
