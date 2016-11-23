@@ -73,8 +73,9 @@
     <string name="utilslib_password_different">输入的两次密码不一致！</string>
     <string name="utilslib_common_search">搜索</string>
     
-    
-    
+    <!-- 列表刷新 -->
+    <string name="utilslib_listfooterview_normal">查看更多</string>
+    <string name="utilslib_listfooterview_ready">松开载入更多</string>
     
     
    

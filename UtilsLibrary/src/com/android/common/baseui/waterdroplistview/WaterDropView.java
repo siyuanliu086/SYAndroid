@@ -23,8 +23,8 @@ import com.common.android.utilslibrary.R;
  * 下拉头中间的“水滴”
  */
 public class WaterDropView extends View {
-    private Circle topCircle;
-    private Circle bottomCircle;
+    private WaterDropCircle topCircle;
+    private WaterDropCircle bottomCircle;
 
     private Paint mPaint;
     private Path mPath;
@@ -96,8 +96,8 @@ public class WaterDropView extends View {
     }
 
     private void init(Context context, AttributeSet attrs) {
-        topCircle = new Circle();
-        bottomCircle = new Circle();
+        topCircle = new WaterDropCircle();
+        bottomCircle = new WaterDropCircle();
         mPath = new Path();
         mPaint = new Paint();
         mPaint.setColor(context.getResources().getColor(R.color.utilslib_theme_color_green));
@@ -223,11 +223,11 @@ public class WaterDropView extends View {
         postInvalidate();
     }
 
-    public Circle getTopCircle() {
+    public WaterDropCircle getTopCircle() {
         return topCircle;
     }
 
-    public Circle getBottomCircle() {
+    public WaterDropCircle getBottomCircle() {
         return bottomCircle;
     }
 
