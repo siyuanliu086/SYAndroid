@@ -70,6 +70,8 @@ public class MainActivity extends Activity {
 	                        ToastUtil.showShortToast(mContext, "点击了第" + position + "个");
 	                    }
 	                }).show();
+		} else if(view.getId() == R.id.waterdroplistview) {
+			startActivity(new Intent(mContext, WaterDropListViewActivity.class));
 		}
 	}
 
