@@ -32,6 +32,7 @@
         <activity android:name="com.siyuan.utilslibrarydemos.SlideSwitchActivity"></activity>
         <activity android:name="com.siyuan.utilslibrarydemos.SortListViewActivity"></activity>
         <activity android:name="com.siyuan.utilslibrarydemos.WaterDropListViewActivity"></activity>
+        <activity android:name="com.siyuan.utilslibrarydemos.PullToZoomScrollActivity"></activity>
     </application>
 
 </manifest>

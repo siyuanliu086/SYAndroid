@@ -72,6 +72,8 @@ public class MainActivity extends Activity {
 	                }).show();
 		} else if(view.getId() == R.id.waterdroplistview) {
 			startActivity(new Intent(mContext, WaterDropListViewActivity.class));
+		} else if(view.getId() == R.id.pullToZoomScroll) {
+			startActivity(new Intent(mContext, PullToZoomScrollActivity.class));
 		}
 	}
 
