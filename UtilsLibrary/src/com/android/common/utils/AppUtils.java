@@ -13,6 +13,7 @@ import android.app.ActivityManager.RunningTaskInfo;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -20,6 +21,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.provider.Settings;
 import android.webkit.MimeTypeMap;
 
 /**
@@ -376,4 +378,32 @@ public class AppUtils {
         return availableProcessors > max ? max : availableProcessors;
     }
 
+		
+	/**
+	 * 打开GPS设置界面
+	 * @param mContext
+	 */
+	public static void startGPSSetting(Activity mContext) {
+		// 转到手机设置界面，用户设置GPS
+		Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+		mContext.startActivity(intent);
+	} 
+	/**
+	 * 打开无线流量设置界面
+	 * @param mContext
+	 */
+	public static void startWirelessSetting(Activity mContext) {
+		// 转到手机设置界面，用户设置GPS
+		Intent intent = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
+		mContext.startActivity(intent);
+	} 
+	/**
+	 * 打开Wifi设置界面
+	 * @param mContext
+	 */
+	public static void startWifiSetting(Activity mContext) {
+		// 转到手机设置界面，用户设置GPS
+		Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+		mContext.startActivity(intent);
+	}
 }
