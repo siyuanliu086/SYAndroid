@@ -29,6 +29,7 @@ public class SearchView extends EditText implements OnFocusChangeListener, TextW
 	 * 删除按钮的引用
 	 */
     private Drawable mClearDrawable; 
+    private String lastChar = "";
  
     public SearchView(Context context) { 
     	this(context, null); 
@@ -44,7 +45,6 @@ public class SearchView extends EditText implements OnFocusChangeListener, TextW
         init();
     }
     
-    
     private void init() { 
     	//获取EditText的DrawableRight,假如没有设置我们就使用默认的图片
     	mClearDrawable = getCompoundDrawables()[2]; 
@@ -57,7 +57,6 @@ public class SearchView extends EditText implements OnFocusChangeListener, TextW
         addTextChangedListener(this); 
     } 
  
- 
     /**
      * 因为我们不能直接给EditText设置点击事件，所以我们用记住我们按下的位置来模拟点击事件
      * 当我们按下的位置 在  EditText的宽度 - 图标到控件右边的间距 - 图标的宽度  和
@@ -67,8 +66,7 @@ public class SearchView extends EditText implements OnFocusChangeListener, TextW
     public boolean onTouchEvent(MotionEvent event) { 
         if (getCompoundDrawables()[2] != null) { 
             if (event.getAction() == MotionEvent.ACTION_UP) { 
-            	boolean touchable = event.getX() > (getWidth() 
-                        - getPaddingRight() - mClearDrawable.getIntrinsicWidth()) 
+            	boolean touchable = event.getX() > (getWidth() - getPaddingRight() - mClearDrawable.getIntrinsicWidth()) 
                         && (event.getX() < ((getWidth() - getPaddingRight())));
                 if (touchable) { 
                 	if(onSearchListener != null) {
@@ -78,7 +76,6 @@ public class SearchView extends EditText implements OnFocusChangeListener, TextW
                 } 
             } 
         } 
- 
         return super.onTouchEvent(event); 
     } 
  
@@ -101,8 +98,7 @@ public class SearchView extends EditText implements OnFocusChangeListener, TextW
      */
     protected void setClearIconVisible(boolean visible) { 
         Drawable right = visible ? mClearDrawable : null; 
-        setCompoundDrawables(getCompoundDrawables()[0], 
-                getCompoundDrawables()[1], right, getCompoundDrawables()[3]); 
+        setCompoundDrawables(getCompoundDrawables()[0], getCompoundDrawables()[1], right, getCompoundDrawables()[3]); 
     } 
      
     
@@ -110,19 +106,22 @@ public class SearchView extends EditText implements OnFocusChangeListener, TextW
      * 当输入框里面内容发生变化的时候回调的方法
      */
     @Override 
-    public void onTextChanged(CharSequence s, int start, int count, int after) { 
-        setClearIconVisible(s.length() > 0); 
-    } 
+    public void onTextChanged(CharSequence s, int start, int count, int after) {} 
  
     @Override 
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) { 
-    } 
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {} 
  
     @Override 
     public void afterTextChanged(Editable s) { 
-         if(onSearchListener != null) {
-        	 onSearchListener.afterTextChanged(s.toString());
-         }
+    	setClearIconVisible(s.length() > 0); 
+    	if(onSearchListener != null) {
+    		if(!s.toString().equals(lastChar) && s.length() > 0) {
+    			onSearchListener.afterTextChanged(s.toString());
+    		} else if(!s.toString().equals(lastChar) && s.length() == 0) {
+    			onSearchListener.onClearClick();
+    		}
+    	} 
+        lastChar = s.toString();
     } 
     
    
@@ -149,7 +148,14 @@ public class SearchView extends EditText implements OnFocusChangeListener, TextW
     // 回调接口
     private OnSearchListener onSearchListener;
     public interface OnSearchListener {
+    	/**
+    	 * 搜索框文本变化回调
+    	 * @param text
+    	 */
     	void afterTextChanged(String text);
+    	/**
+    	 * 清除搜索关键词（重置数据）回调
+    	 */
     	void onClearClick();
     }
     public void setOnOnSearchListener(OnSearchListener listener) {
