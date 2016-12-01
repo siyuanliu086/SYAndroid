@@ -13,7 +13,7 @@
         android:layout_marginBottom="20dip"
         android:layout_marginTop="20dip"
         android:gravity="center"
-        android:text="jdkfkljflkdsjkfk"
+        android:text="标题"
         android:textColor="@color/utilslib_theme_color_green"
         android:textSize="16sp" />
 
@@ -25,7 +25,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:gravity="center"
-        android:text="对话框提示文本"
+        android:text="内容文本信息"
         android:textColor="@color/utilslib_deep_gray"
         android:textSize="14sp" />
 
@@ -34,13 +34,44 @@
         android:layout_height="1dp"
         android:background="@color/utilslib_lines_color" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="确定"
-        android:textColor="@color/utilslib_theme_color_green"
-        android:textSize="14sp" />
+        android:layout_height="42dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/dialog_ok_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@android:string/ok"
+            android:textColor="@color/utilslib_theme_color_green"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/dialog_cancel_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="32dp"
+                android:background="@color/utilslib_lines_color" 
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/dialog_cancel_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@android:string/cancel"
+                android:textColor="@color/utilslib_theme_color_green"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
