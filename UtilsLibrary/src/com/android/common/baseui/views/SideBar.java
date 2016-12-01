@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-import com.android.common.utils.DensityUtil;
+import com.android.common.utils.AppUtils;
 import com.common.android.utilslibrary.R;
 
 /**
@@ -45,7 +45,7 @@ public class SideBar extends View {
 
 	public SideBar(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		px1 = DensityUtil.dip2px(getContext(), 12);
+		px1 = AppUtils.dip2px(getContext(), 12);
 	}
 
 	public SideBar(Context context) {

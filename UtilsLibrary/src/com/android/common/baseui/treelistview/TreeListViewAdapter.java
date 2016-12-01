@@ -3,10 +3,7 @@ package com.android.common.baseui.treelistview;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.android.common.utils.DensityUtil;
-
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

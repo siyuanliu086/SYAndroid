@@ -1,6 +1,6 @@
 package com.android.common.baseui.calendarcomponent.theme;
 
-import com.android.common.utils.DensityUtil;
+import com.android.common.utils.AppUtils;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,7 +12,7 @@ public class ADCircleDayTheme implements IDayTheme {
 	int dip42;
 	
 	public ADCircleDayTheme(Context context) {
-		dip42 = DensityUtil.dip2px(context, 42);
+		dip42 = AppUtils.dip2px(context, 42);
 	}
 	
     @Override

@@ -1,9 +1,9 @@
 package com.android.common.baseui.calendarcomponent.theme;
 
-import com.android.common.utils.DensityUtil;
-
 import android.content.Context;
 import android.graphics.Color;
+
+import com.android.common.utils.AppUtils;
 
 /**
  * Created by Administrator on 2016/7/30.
@@ -12,7 +12,7 @@ public class DefaultDayTheme implements IDayTheme {
 	int dip42;
 	
 	public DefaultDayTheme(Context context) {
-		dip42 = DensityUtil.dip2px(context, 42);
+		dip42 = AppUtils.dip2px(context, 42);
 	}
 	
     @Override

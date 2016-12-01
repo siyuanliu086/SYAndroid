@@ -12,8 +12,6 @@ import android.util.AttributeSet;
 
 import com.android.common.baseui.calendarcomponent.theme.SinginDayTheme;
 import com.android.common.baseui.calendarcomponent.views.MonthView;
-import com.android.common.utils.DateUtil;
-import com.android.common.utils.DensityUtil;
 
 /**
  * @TiTle SinginMonthView.java
