@@ -10,6 +10,7 @@ import com.android.common.baseui.alertview.AlertView;
 import com.android.common.baseui.progressbar.CircleProgressBar;
 import com.android.common.baseui.views.BadgeView;
 import com.android.common.baseui.views.SearchView;
+import com.android.common.utils.SoftKeyBoardListener;
 import com.android.common.utils.ToastUtil;
 import com.siyuan.utilslibrarydemos.canlendar.CanlendarMainActivity;
 
@@ -30,6 +31,19 @@ public class MainActivity extends Activity {
 		BadgeView badge = new BadgeView(this, searchView);
 		badge.setText("1");
 		badge.show();
+		
+		// 监听键盘现实和隐藏
+		SoftKeyBoardListener.setListener(MainActivity.this, new SoftKeyBoardListener.OnSoftKeyBoardChangeListener(){
+
+			@Override
+			public void keyBoardShow(int height) {
+				System.out.println("SoftKeyBoardListener keyBoardShow " + height);
+			}
+
+			@Override
+			public void keyBoardHide(int height) {
+				System.out.println("SoftKeyBoardListener keyBoardHide " + height);
+			}});
 	}
 	
 	public void onClick(View view) {
