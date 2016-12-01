@@ -21,7 +21,13 @@ import java.util.List;
 import org.apache.http.protocol.HTTP;
 
 /**
- * Created by wyouflf on 13-8-30.
+ * @TiTle CharsetUtils.java
+ * @Package com.android.common.utils
+ * @Description 字符集转换工具
+ * @Date 2016年12月1日
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-12-01
+ * @Company ISoftStone ZHHB
  */
 public class CharsetUtils {
 

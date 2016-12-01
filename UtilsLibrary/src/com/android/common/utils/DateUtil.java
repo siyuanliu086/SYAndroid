@@ -6,8 +6,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import android.util.Log;
-
+/**
+ * @TiTle DateUtil.java
+ * @Package com.android.common.utils
+ * @Description 格式化
+ * @Date 2016年12月1日
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-12-01
+ * @Company ISoftStone ZHHB
+ */
 public class DateUtil {
 	public static String[] weekName = { "周日", "周一", "周二", "周三", "周四", "周五", "周六" };
 	public static String[] monthName = { "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" };

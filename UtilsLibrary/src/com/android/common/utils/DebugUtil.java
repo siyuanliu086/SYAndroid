@@ -1,10 +1,13 @@
 package com.android.common.utils;
 
 /**
- * @author LuoJ
- * @date 2014-5-9
- * @package com.anhry.android.utils -- DebugUtil.java
- * @Description Debug工具类
+ * @TiTle DebugUtil.java
+ * @Package com.android.common.utils
+ * @Description 性能分析工具（时间）
+ * @Date 2016年12月1日
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-12-01
+ * @Company ISoftStone ZHHB
  */
 public class DebugUtil {
 
