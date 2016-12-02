@@ -10,17 +10,11 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
-import android.support.v4.util.LruCache;
 import android.util.Log;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 
 import com.android.volley.Request.Method;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.ImageLoader.ImageCache;
-import com.android.volley.toolbox.ImageLoader.ImageListener;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -58,6 +52,34 @@ public class VolleyRequestManager {
 			@Override
 			public Map<String, String> getHeaders() {
 				HashMap<String, String> headers = new HashMap<String, String>();
+				headers.put("Accept", "application/json");
+				headers.put("Content-Type", "application/json; charset=UTF-8");
+				return headers;
+			}
+		};
+		requestQueue.add(jsonRequest);
+	}
+	
+	/**
+	 * 原始Get提交方法
+	 * @param mContext
+	 * @param url
+	 * @param token
+	 * @param mResponseListener
+	 * @param errorListener
+	 */
+	public static final void volleyGetRequest(Context mContext, 
+			String url, final String token, ResponseListener mResponseListener, ErrorListener errorListener) {
+		RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+		
+		// 封装登录请求参数
+		JsonRequest<JSONObject> jsonRequest = new JsonObjectRequest(
+				Method.GET, url, null, mResponseListener, errorListener) {
+			
+			@Override
+			public Map<String, String> getHeaders() {
+				HashMap<String, String> headers = new HashMap<String, String>();
+				headers.put("token", token);
 				headers.put("Accept", "application/json");
 				headers.put("Content-Type", "application/json; charset=UTF-8");
 				return headers;
@@ -119,6 +141,35 @@ public class VolleyRequestManager {
 	 * volleyPostRequest 原始POST提交方法
 	 * @param mContext
 	 * @param url
+	 * @param token
+	 * @param reuqestParams
+	 * @param mResponseListener
+	 * @param errorListener
+	 */
+	public static final void volleyPostRequest(Context mContext, final String url, final String token, JSONObject reuqestParams, 
+			ResponseListener mResponseListener, ErrorListener errorListener) {
+		RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+		
+		// 封装登录请求参数
+		JsonRequest<JSONObject> jsonRequest = new JsonObjectRequest(
+				Method.POST, url, reuqestParams, mResponseListener, errorListener) {
+			
+			@Override
+			public Map<String, String> getHeaders() {
+				HashMap<String, String> headers = new HashMap<String, String>();
+				headers.put("token", token);
+				headers.put("Accept", "application/json");
+				headers.put("Content-Type", "application/json; charset=UTF-8");
+				return headers;
+			}
+		};
+		requestQueue.add(jsonRequest);
+	}
+	
+	/**
+	 * volleyPostRequest 原始POST提交方法
+	 * @param mContext
+	 * @param url
 	 * @param reuqestParams
 	 * @param mResponseListener
 	 * @param errorListener
@@ -152,6 +203,21 @@ public class VolleyRequestManager {
 			ResponseListener mResponseListener, ErrorListener errorListener) {
 		JSONObject reuqestParams = new JSONObject(params);
 		volleyPostRequest(mContext, url, reuqestParams, mResponseListener, errorListener);
+	}
+	
+	/**
+	 * 封装后POST一个HashMap
+	 * @param mContext
+	 * @param url
+	 * @param token
+	 * @param params
+	 * @param mResponseListener
+	 * @param errorListener
+	 */
+	public static final void volleyPostRequest(Context mContext, String url, String token, Map<String, ? extends Object> params, 
+			ResponseListener mResponseListener, ErrorListener errorListener) {
+		JSONObject reuqestParams = new JSONObject(params);
+		volleyPostRequest(mContext, url, token, reuqestParams, mResponseListener, errorListener);
 	}
 
 	/**
@@ -197,7 +263,7 @@ public class VolleyRequestManager {
 	}
 	
 	/**
-	 * Volley 下载图片
+	 * Volley 下载文件
 	 * @param mContext
 	 * @param url
 	 * @param mResponseListener
@@ -205,26 +271,102 @@ public class VolleyRequestManager {
 	 */
 	public static final void volleyRequestFile(Context mContext, final String url, 
 			ResponseListenerBitmap mResponseListener, ErrorListener errorListener) {
-		Log.i(TAG, "download image -- " + url);
+		Log.i(TAG, "download image " + url);
 		RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-		ImageRequest imageRequest = new ImageRequest(url, mResponseListener, 0, 0, ScaleType.FIT_XY, Config.RGB_565, errorListener);
+		@SuppressWarnings("deprecation")
+		ImageRequest imageRequest = new ImageRequest(url, mResponseListener, 0, 0, Config.RGB_565, errorListener);
 		requestQueue.add(imageRequest);
 	}
-	
-	/**
-	 * Volley 下载图片
-	 * @param mContext
-	 * @param url
-	 * @param mResponseListener
-	 * @param errorListener
-	 */
-	public static final void volleyRequestFile(Context mContext, final String url, ScaleType scaleType,
-			ResponseListenerBitmap mResponseListener, ErrorListener errorListener) {
-		Log.i(TAG, "download image -- " + url);
-		RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-		ImageRequest imageRequest = new ImageRequest(url, mResponseListener, 0, 0, scaleType, Config.RGB_565, errorListener);
-		requestQueue.add(imageRequest);
-	}
+//	
+//	private static BitmapCache bitmapCache = new BitmapCache();
+//	
+//	public static final void deleteTargetCache(String url) {
+//		if(bitmapCache != null) {			
+//			bitmapCache.deleteTargetCache(url);
+//		}
+//	}
+//	
+//	/**
+//	 * Volley ImageView设置网络图片，实现缓存
+//	 * <b>(记得还有NetworkImageView)</b>
+//	 * <hr>
+//	 * @param mContext
+//	 * @param url
+//	 * @param mResponseListener
+//	 * @param errorListener
+//	 */
+//	public static final void volleyRequestImage(Context mContext, ImageView imageView, String url, 
+//			int loadingImgRes, int failedImgRes) {
+//		Log.i(TAG, "volleyRequestImage : " + url);
+//		RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+//	    ImageListener listener = ImageLoader.getImageListener(imageView, loadingImgRes, failedImgRes);  
+//		ImageLoader imageLoader = new ImageLoader(requestQueue, bitmapCache);
+//	    imageLoader.get(url, listener);  
+//	}
+//	/**
+//	 * Volley ImageView设置网络图片，实现缓存，优化控制大小
+//	 * <b>(记得还有NetworkImageView)</b>
+//	 * <hr>
+//	 * @param mContext
+//	 * @param url
+//	 * @param mResponseListener
+//	 * @param errorListener
+//	 */
+//	public static final void volleyRequestImage(Context mContext, ImageView imageView, String url, 
+//			int loadingImgRes, int failedImgRes, int imgWidth, int imgHeight) {
+//		Log.i(TAG, "volleyRequestImage : " + url);
+//		RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+//		ImageListener listener = ImageLoader.getImageListener(imageView, loadingImgRes, failedImgRes);  
+//		ImageLoader imageLoader = new ImageLoader(requestQueue, bitmapCache);
+//		imageLoader.get(url, listener, imgWidth, imgHeight);
+//	}
+//	
+//	/**
+//	 * @TiTle VolleyRequestManager.java
+//	 * @Package com.android.volley.manager
+//	 * @Description 图片缓存设置，本地缓存大小设置30M
+//	 * @Date 2015年12月23日
+//	 * @Author siyuan
+//	 * @Refactor 
+//	 * @Company ISoftStone ZHHB
+//	 */
+//    private static class BitmapCache implements ImageCache {  
+//      
+//        private LruCache<String, Bitmap> mCache;  
+//      
+//        public BitmapCache() {  
+//            int maxSize = 30 * 1024 * 1024;  
+//            mCache = new LruCache<String, Bitmap>(maxSize) {  
+//                @Override  
+//                protected int sizeOf(String key, Bitmap bitmap) {  
+//                    return bitmap.getRowBytes() * bitmap.getHeight();  
+//                }  
+//            };  
+//        }  
+//      
+//        @Override  
+//        public Bitmap getBitmap(String url) {  
+//            return mCache.get(url);  
+//        }  
+//      
+//        @Override  
+//        public void putBitmap(String url, Bitmap bitmap) {  
+//            mCache.put(url, bitmap);  
+//        }  
+//        
+//        public void deleteTargetCache(String url) {
+//        	// siyuan 2016年2月26日
+//        	// 根据Volley ImageLoader的Cache实现原理，Cache的Key = 
+//        	// StringBuilder(url.length() + 12).append("#W").append(maxWidth)
+//            // .append("#H").append(maxHeight).append("#S").append(scaleType.ordinal()).append(url).toString()
+//        	Map<String, Bitmap> cacheCopy = mCache.snapshot();
+//        	for(String key : cacheCopy.keySet()) {
+//        		if(key.endsWith(url)) {
+//        			mCache.remove(key);
+//        		}
+//        	}
+//        }
+//    }  
 	
 	public interface ResponseListenerBitmap extends Response.Listener<Bitmap> {}
 	public interface ResponseListener extends Response.Listener<JSONObject> {}
