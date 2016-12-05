@@ -3,7 +3,7 @@ package com.android.common.baseui.calendarcomponent.theme;
 import android.content.Context;
 import android.graphics.Color;
 
-import com.android.common.utils.AppUtils;
+import com.android.common.utils.AppUtil;
 
 /**
  * Created by Administrator on 2016/8/9.
@@ -12,7 +12,7 @@ public class SinginDayTheme implements IDayTheme {
 	int dip36;
 	
 	public SinginDayTheme(Context context) {
-		dip36 = AppUtils.dip2px(context, 36);
+		dip36 = AppUtil.dip2px(context, 36);
 	}
 	
     @Override

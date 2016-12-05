@@ -10,18 +10,22 @@ import android.widget.Toast;
 import com.common.android.utilslibrary.R;
 
 /**
- * @author zhangxy
- * @date 2014-10-10
- * @Description 显示对话框
+ * @TiTle ToastUtil.java
+ * @Package com.android.common.utils
+ * @Description Toast 工具
+ * @Date 2016年12月5日
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-12-05
+ * @Company ISoftStone ZHHB
  */
 public class ToastUtil {
 
 	/**
-	 * 
+	 * 自定义布局Toast
 	 * @param context
 	 * @param msg
 	 */
-	public static void showToast(Context context, String msg) {
+	public static void showCustomToast(Context context, String msg) {
 		Context appContext = context.getApplicationContext();
 		Toast toast = new Toast(appContext);
 		LayoutInflater inflater = LayoutInflater.from(appContext);
@@ -42,11 +46,11 @@ public class ToastUtil {
 	 * @param context
 	 * @param id
 	 */
-	public static void showToast(Context context, int resId) {
+	public static void showCustomToast(Context context, int resId) {
 		if (context == null)
 			return;
 		String msg = context.getResources().getString(resId);
-		showToast(context, msg);
+		showCustomToast(context, msg);
 	}
 
 	public static void showShortToast(Context context, String message) {

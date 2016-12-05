@@ -6,13 +6,14 @@ import android.graphics.Rect;
 /**
  * @TiTle ActivityUtils.java
  * @Package com.android.common.utils
- * @Description Activity 页面内工具
+ * @Description Activity 页面内工具<br>
+ * 视图工具三层级 ：应用级{@link AppUtil}、活动级{@link ActivityUtil}、视图级{@link ViewUtil}
  * @Date 2016年10月14日
  * @Author siyuan
  * @Refactor siyuan FIX 2016-10-14
  * @Company ISoftStone ZHHB
  */
-public class ActivityUtils {
+public class ActivityUtil {
 	
 	/**
      * 获取状态栏高度
@@ -49,4 +50,5 @@ public class ActivityUtils {
         }
         return statusHeight;
     }
+
 }

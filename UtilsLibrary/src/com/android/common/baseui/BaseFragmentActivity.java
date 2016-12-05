@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
 import com.android.common.baseui.views.CustomLoadingView;
 import com.android.common.baseui.views.NumberProgressBar;
 import com.android.common.baseui.views.TitleBarView;
-import com.android.common.utils.ActivityUtils;
+import com.android.common.utils.ActivityUtil;
 import com.android.common.utils.NetUtil;
 import com.common.android.utilslibrary.R;
 
@@ -86,7 +86,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 			isStatusBarTransparent = true;
 			
-			statusBarHeight = ActivityUtils.getStatusHeight(this);
+			statusBarHeight = ActivityUtil.getStatusHeight(this);
 		}
 		if(isStatusBarTransparent) {
 			baseTitleBar.setPaddingViewHeight((int)(statusBarHeight * 0.8));

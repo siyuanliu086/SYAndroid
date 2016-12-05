@@ -25,4 +25,18 @@ public class MathUtil {
 	public static double pointTotoDegrees(double x, double y) {
 		return Math.toDegrees(Math.atan2(x, y));
 	}
+	
+	/**
+	 * 点在圆肉
+	 * 
+	 * @param sx
+	 * @param sy
+	 * @param r
+	 * @param x
+	 * @param y
+	 * @return
+	 */
+	public static boolean checkInRound(float sx, float sy, float x, float y, float r) {
+		return distance(sx, sy, x, y) < r;
+	}
 }

@@ -3,7 +3,7 @@ package com.android.common.baseui.calendarcomponent.theme;
 import android.content.Context;
 import android.graphics.Color;
 
-import com.android.common.utils.AppUtils;
+import com.android.common.utils.AppUtil;
 
 /**
  * Created by Administrator on 2016/7/31.
@@ -12,7 +12,7 @@ public class SinginWeekTheme implements IWeekTheme {
 	int dip42;
 	
 	public SinginWeekTheme(Context context) {
-		dip42 = AppUtils.dip2px(context, 42);
+		dip42 = AppUtil.dip2px(context, 42);
 	}
 	
     @Override

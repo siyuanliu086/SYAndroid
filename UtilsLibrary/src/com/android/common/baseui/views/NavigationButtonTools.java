@@ -10,7 +10,7 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.common.utils.AppUtils;
+import com.android.common.utils.AppUtil;
 
 /**
  * @TiTle NavigationButtonTools.java
@@ -58,8 +58,8 @@ public class NavigationButtonTools implements OnClickListener{
 		this.drawableResId = drawableResId;
 		menuLayout.removeAllViews();
 		
-		int height24 = AppUtils.dip2px(mContext, 24);
-		int marginValue = AppUtils.dip2px(mContext, 10);
+		int height24 = AppUtil.dip2px(mContext, 24);
+		int marginValue = AppUtil.dip2px(mContext, 10);
 		for (int i = 0; i < drawableResId.length; i++) {
 			LinearLayout itemLayout = new LinearLayout(mContext);
 			itemLayout.setWeightSum(1);

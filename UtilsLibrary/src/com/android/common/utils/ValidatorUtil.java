@@ -3,10 +3,13 @@ package com.android.common.utils;
 import java.util.regex.Pattern;
  
 /**
- * 校验器：利用正则表达式校验邮箱、手机号等
- * 
- * @author liujiduo
- * 
+ * @TiTle ValidatorUtil.java
+ * @Package com.android.common.utils
+ * @Description 校验器：利用正则表达式校验邮箱、手机号等
+ * @Date 2016年12月5日
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-12-05
+ * @Company ISoftStone ZHHB
  */
 public class ValidatorUtil {
     /**

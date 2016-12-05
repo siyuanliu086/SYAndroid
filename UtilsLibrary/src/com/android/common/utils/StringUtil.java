@@ -7,11 +7,17 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
-import java.util.UUID;
 
+/**
+ * @TiTle StringUtil.java
+ * @Package com.android.common.utils
+ * @Description
+ * @Date 2016年12月5日
+ * @Author siyuan
+ * @Refactor siyuan FIX 2016-12-05
+ * @Company ISoftStone ZHHB
+ */
 public class StringUtil {
-	private static final String TAG = "StringUtil";
-	
 	/**
 	 * 设置变量非空（非NULL）
 	 * @param str

@@ -25,16 +25,17 @@ import android.provider.Settings;
 import android.webkit.MimeTypeMap;
 
 /**
- * @TiTle AppUtils.java
+ * @TiTle AppUtil.java
  * @Package com.android.common.utils
- * @Description APP级别通用工具及方法（版本号、应用信息、SD卡路径、系统版本、服务运行、UUID、横竖屏、
- * 		是否系统APP、是否栈顶、根据设备cpu获取线程池大小建议）
+ * @Description APP级别通用工具及方法<br>（版本号、应用信息、SD卡路径、系统版本、服务运行、UUID、横竖屏、
+ * 		是否系统APP、是否栈顶、根据设备cpu获取线程池大小建议）<br>
+ * 视图工具三层级 ：应用级{@link AppUtil}、活动级{@link ActivityUtil}、视图级{@link ViewUtil}
  * @Date 2016年10月14日 
  * @Author siyuan
  * @Refactor siyuan FIX 2016-10-14
  * @Company ISoftStone ZHHB
  */
-public class AppUtils {
+public class AppUtil {
 	
 	private static PackageManager pm;
 	

@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.android.common.utils.AppUtils;
+import com.android.common.utils.AppUtil;
 import com.common.android.utilslibrary.R;
 
 /**
@@ -112,7 +112,7 @@ public class CustomLoadingView extends RelativeLayout{
 	public void onLoginLoading() {
 		View emptyView = findViewById(R.id.loading_emptyview);
 		RelativeLayout.LayoutParams emptyLayoutParams = (LayoutParams) emptyView.getLayoutParams();
-		emptyLayoutParams.height = AppUtils.dip2px(mContext, 60);
+		emptyLayoutParams.height = AppUtil.dip2px(mContext, 60);
 		
 		// 设置样式，开始加载
 		setText("");

@@ -60,7 +60,7 @@ import android.view.WindowManager;
  * @Company ISoftStone ZHHB
  */
 public class BitmapUtil {
-	public static BlockingQueue queue; // 缓冲队列
+	public static BlockingQueue<Runnable> queue; // 缓冲队列
 	private static ThreadPoolExecutor executor;
 	private static int ThreadCount = 5; // 线程个数
 	private static int coreThreadCount = 2; // 核心线程
@@ -154,7 +154,7 @@ public class BitmapUtil {
 	}
 
 	static {
-		queue = new LinkedBlockingQueue();
+		queue = new LinkedBlockingQueue<Runnable>();
 		executor = new ThreadPoolExecutor(coreThreadCount, ThreadCount, 180,
 				TimeUnit.SECONDS, queue);
 	}
@@ -268,7 +268,7 @@ public class BitmapUtil {
 		decorview.setDrawingCacheEnabled(true);
 		bmp = decorview.getDrawingCache();
 
-		String SavePath = AppUtils.getSDPath() + "/ScreenImage";
+		String SavePath = AppUtil.getSDPath() + "/ScreenImage";
 
 		// 存储为Bitmap
 		try {
@@ -824,4 +824,14 @@ public class BitmapUtil {
         }
         return dst;
     }
+    
+	
+	//view 转bitmap  and by whj
+	public static Bitmap convertViewToBitmap(View view) {
+		 view.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+		 view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+		 view.buildDrawingCache();
+		 Bitmap bitmap = view.getDrawingCache();
+		 return bitmap;
+	}
 }

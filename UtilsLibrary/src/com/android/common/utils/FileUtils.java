@@ -123,7 +123,7 @@ public class FileUtils {
 	public static void mkDirs(String folderPath) {
 		String[] strs = folderPath.split("/");
 		int len = strs.length;
-		String strPath = AppUtils.getSDPath() + "/";
+		String strPath = AppUtil.getSDPath() + "/";
 		File path;
 		for (int i = 0; i < len; i++) {
 			if (strs[i] != null && !"".equalsIgnoreCase(strs[i])) {
