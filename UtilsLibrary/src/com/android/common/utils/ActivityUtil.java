@@ -51,4 +51,13 @@ public class ActivityUtil {
         return statusHeight;
     }
 
+    /**
+     * 字符串是否为{@code null}或者空字符串。
+     *
+     * @param s
+     * @return
+     */
+    public static boolean isNullOrEmpty(String s) {
+        return s == null || s.length() == 0;
+    }
 }
