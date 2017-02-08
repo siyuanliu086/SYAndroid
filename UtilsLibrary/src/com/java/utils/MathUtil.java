@@ -1,4 +1,4 @@
-package com.android.common.utils;
+package com.java.utils;
 
 public class MathUtil {
 	/**

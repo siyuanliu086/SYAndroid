@@ -1,8 +1,6 @@
-package com.android.common.utils;
+package com.java.utils;
 
 import java.util.Random;
-
-import android.text.TextUtils;
 
 /**
  * Random Utils
@@ -113,7 +111,7 @@ public class RandomUtils {
      *         </ul>
      */
     public static String getRandom(String source, int length) {
-        return TextUtils.isEmpty(source) ? null : getRandom(source.toCharArray(), length);
+        return StringUtil.isNull(source) ? null : getRandom(source.toCharArray(), length);
     }
 
     /**

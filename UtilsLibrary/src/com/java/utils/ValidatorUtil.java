@@ -1,10 +1,10 @@
-package com.android.common.utils;
+package com.java.utils;
 
 import java.util.regex.Pattern;
  
 /**
  * @TiTle ValidatorUtil.java
- * @Package com.android.common.utils
+ * @Package com.java.utils
  * @Description 校验器：利用正则表达式校验邮箱、手机号等
  * @Date 2016年12月5日
  * @Author siyuan

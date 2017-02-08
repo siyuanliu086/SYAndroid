@@ -1,4 +1,4 @@
-package com.android.common.utils;
+package com.java.utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -8,10 +8,13 @@ import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
 
 /**
- * @author LuoJ
- * @date 2014-1-9
- * @package com.lidroid.xutils.ext.util -- ObjectUtil.java
+ * @TiTle ObjectUtil.java
+ * @Package com.android.common.utils
  * @Description 对象工具类
+ * @Date 2017年2月8日
+ * @Author siyuan
+ * @Refactor 
+ * @Company ISoftStone ZHHB
  */
 public class ObjectUtil {
 

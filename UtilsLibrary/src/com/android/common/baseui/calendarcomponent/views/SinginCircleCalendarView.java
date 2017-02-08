@@ -15,8 +15,8 @@ import com.android.common.baseui.calendarcomponent.entity.CalendarInfo;
 import com.android.common.baseui.calendarcomponent.theme.IDayTheme;
 import com.android.common.baseui.calendarcomponent.theme.IWeekTheme;
 import com.android.common.baseui.views.IconFontTextView;
-import com.android.common.utils.DateUtil;
 import com.common.android.utilslibrary.R;
+import com.java.utils.DateUtil;
 
 /**
  * @TiTle SinginCircleCalendarView.java

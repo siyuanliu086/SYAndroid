@@ -13,8 +13,8 @@ import com.android.common.baseui.calendarcomponent.ADCircleMonthView;
 import com.android.common.baseui.calendarcomponent.entity.CalendarInfo;
 import com.android.common.baseui.calendarcomponent.theme.IDayTheme;
 import com.android.common.baseui.calendarcomponent.theme.IWeekTheme;
-import com.android.common.utils.DateUtil;
 import com.common.android.utilslibrary.R;
+import com.java.utils.DateUtil;
 
 /**
  * Created by Administrator on 2016/8/7.

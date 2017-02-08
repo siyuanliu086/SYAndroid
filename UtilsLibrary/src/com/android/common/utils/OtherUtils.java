@@ -30,6 +30,8 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.protocol.HTTP;
 
+import com.java.utils.CharsetUtils;
+
 import android.text.TextUtils;
 
 /**

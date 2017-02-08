@@ -15,7 +15,7 @@ import android.widget.Scroller;
 
 import com.android.common.baseui.calendarcomponent.entity.CalendarInfo;
 import com.android.common.baseui.calendarcomponent.theme.IDayTheme;
-import com.android.common.utils.DateUtil;
+import com.java.utils.DateUtil;
 
 /**
  * Created by Administrator on 2016/7/30.

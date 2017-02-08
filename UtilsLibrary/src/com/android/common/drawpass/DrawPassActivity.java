@@ -7,9 +7,9 @@ import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.android.common.drawpass.LocusPassWordView.OnCompleteListener;
-import com.android.common.utils.MD5;
 import com.android.common.utils.PreferencesUtils;
 import com.common.android.utilslibrary.R;
+import com.java.utils.MD5;
 
 /**
  * @TiTle DrawPassActivity.java

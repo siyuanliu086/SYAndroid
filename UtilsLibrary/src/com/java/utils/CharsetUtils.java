@@ -13,12 +13,14 @@
  * limitations under the License.
  */
 
-package com.android.common.utils;
+package com.java.utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.protocol.HTTP;
+
+import com.android.common.utils.LogUtils;
 
 /**
  * @TiTle CharsetUtils.java

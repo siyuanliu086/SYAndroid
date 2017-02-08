@@ -1,4 +1,4 @@
-package com.android.common.utils;
+package com.java.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 
 /**
  * @TiTle DateUtil.java
- * @Package com.android.common.utils
+ * @Package com.java.utils
  * @Description 格式化
  * @Date 2016年12月1日
  * @Author siyuan

@@ -1,11 +1,11 @@
-package com.android.common.utils;
+package com.java.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * @TiTle CheckIdCard.java
- * @Package com.android.common.utils
+ * @Package com.java.utils
  * @Description 身份证校验
  * @Date 2016年12月1日
  * @Author siyuan

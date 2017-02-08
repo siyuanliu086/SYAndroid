@@ -47,6 +47,8 @@ public class AppUtil {
 	 /** recommend default thread pool size according to system available processors, {@link #getDefaultThreadPoolSize()} **/
     public static final int DEFAULT_THREAD_POOL_SIZE = getDefaultThreadPoolSize();
 
+    
+  //===============================Get Application Info=================================
 	/**
 	 * 创建包管理器实例.
 	 * 
@@ -138,6 +140,49 @@ public class AppUtil {
 	public static int getAndroidSDKVersion() {
 		return android.os.Build.VERSION.SDK_INT;
 	}
+	
+	/**
+	 * 获取Sd卡路径
+	 * 
+	 * @return
+	 */
+	public static String getSDPath() {
+		File sdDir = null;
+		// 判断SD卡是否存在
+		if (Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
+			sdDir = Environment.getExternalStorageDirectory();// 获取SD卡路径
+			return sdDir.toString();
+		} else {
+			return null;
+		}
+	}
+
+	/**
+	 * 获取MimeType
+	 * @param url 
+	 * @return
+	 */
+	public static String getMimeType(String url) {
+		String type = null;
+		String extension = MimeTypeMap.getFileExtensionFromUrl(url);
+		if (extension != null) {
+			MimeTypeMap mime = MimeTypeMap.getSingleton();
+			type = mime.getMimeTypeFromExtension(extension);
+		}
+		return type;
+	}
+
+	
+	/**
+	 * 获取UUID
+	 * @param length
+	 * @return
+	 */
+	public static String generateId(int length) {
+		return UUID.randomUUID().toString();
+	}
+	
+	//===============================Application/Screen Check=================================
 
 	/**
 	 * 判断服务是否正在运行.
@@ -223,48 +268,6 @@ public class AppUtil {
 		return false;
 	}
 	
-	
-	/**
-	 * 获取Sd卡路径
-	 * 
-	 * @return
-	 */
-	public static String getSDPath() {
-		File sdDir = null;
-		// 判断SD卡是否存在
-		if (Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
-			sdDir = Environment.getExternalStorageDirectory();// 获取SD卡路径
-			return sdDir.toString();
-		} else {
-			return null;
-		}
-	}
-
-	/**
-	 * 获取MimeType
-	 * @param url 
-	 * @return
-	 */
-	public static String getMimeType(String url) {
-		String type = null;
-		String extension = MimeTypeMap.getFileExtensionFromUrl(url);
-		if (extension != null) {
-			MimeTypeMap mime = MimeTypeMap.getSingleton();
-			type = mime.getMimeTypeFromExtension(extension);
-		}
-		return type;
-	}
-
-	
-	/**
-	 * 获取UUID
-	 * @param length
-	 * @return
-	 */
-	public static String generateId(int length) {
-		return UUID.randomUUID().toString();
-	}
-
     /**
      * 查询屏幕是否竖屏，非竖屏则横屏
      * @param context
@@ -363,6 +366,7 @@ public class AppUtil {
         }
     }
     
+  //===============================Screen Size=================================
     /**
      * 获得屏幕高度
      *
@@ -389,6 +393,7 @@ public class AppUtil {
         return outMetrics.heightPixels;
     }
     
+  //===============================Screen Shoot=================================
     /**
      * 获取当前屏幕截图，包含状态栏
      *
@@ -430,6 +435,8 @@ public class AppUtil {
         return bp;
     }
 	
+    
+  //===============================Thread Pool=================================
 	/**
      * get recommend default thread pool size
      * 
@@ -451,6 +458,7 @@ public class AppUtil {
         return availableProcessors > max ? max : availableProcessors;
     }
     
+  //===============================dip <-> px=================================
     /** 
      * 根据手机的分辨率dp 转成(像素)
      */  
@@ -481,7 +489,7 @@ public class AppUtil {
         return (int) (pxValue / scale + 0.5f);  
     }  
 
-		
+	//===============================Open Setting=================================
 	/**
 	 * 打开GPS设置界面
 	 * @param mContext

@@ -1,4 +1,4 @@
-package com.android.common.utils;
+package com.java.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -10,7 +10,7 @@ import java.util.Collection;
 
 /**
  * @TiTle StringUtil.java
- * @Package com.android.common.utils
+ * @Package com.java.utils
  * @Description
  * @Date 2016年12月5日
  * @Author siyuan
