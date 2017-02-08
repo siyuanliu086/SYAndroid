@@ -19,16 +19,21 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
 import android.os.Environment;
-import android.text.TextUtils;
 import android.provider.Settings;
+import android.text.TextUtils;
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 
 /**
  * @TiTle AppUtil.java
  * @Package com.android.common.utils
  * @Description APP级别通用工具及方法<br>（版本号、应用信息、SD卡路径、系统版本、服务运行、UUID、横竖屏、
- * 		是否系统APP、是否栈顶、根据设备cpu获取线程池大小建议）<br>
+ * 		是否系统APP、是否栈顶、根据设备cpu获取线程池大小建议）、获取屏幕截图（是否包含状态栏）、获取屏幕宽、高<br>
  * 视图工具三层级 ：应用级{@link AppUtil}、活动级{@link ActivityUtil}、视图级{@link ViewUtil}
  * @Date 2016年10月14日 
  * @Author siyuan
@@ -356,6 +361,73 @@ public class AppUtil {
             e.printStackTrace();
             return false;
         }
+    }
+    
+    /**
+     * 获得屏幕高度
+     *
+     * @param context
+     * @return
+     */
+    public static int getScreenWidth(Context context) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(outMetrics);
+        return outMetrics.widthPixels;
+    }
+
+    /**
+     * 获得屏幕宽度
+     *
+     * @param context
+     * @return
+     */
+    public static int getScreenHeight(Context context) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(outMetrics);
+        return outMetrics.heightPixels;
+    }
+    
+    /**
+     * 获取当前屏幕截图，包含状态栏
+     *
+     * @param activity
+     * @return
+     */
+    public static Bitmap snapShotWithStatusBar(Activity activity) {
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+        Bitmap bmp = view.getDrawingCache();
+        int width = getScreenWidth(activity);
+        int height = getScreenHeight(activity);
+        Bitmap bp = null;
+        bp = Bitmap.createBitmap(bmp, 0, 0, width, height);
+        view.destroyDrawingCache();
+        return bp;
+    }
+
+    /**
+     * 获取当前屏幕截图，不包含状态栏
+     *
+     * @param activity
+     * @return
+     */
+    public static Bitmap snapShotWithoutStatusBar(Activity activity) {
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+        Bitmap bmp = view.getDrawingCache();
+        Rect frame = new Rect();
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+        int width = getScreenWidth(activity);
+        int height = getScreenHeight(activity);
+        Bitmap bp = null;
+        bp = Bitmap.createBitmap(bmp, 0, statusBarHeight, width, height - statusBarHeight);
+        view.destroyDrawingCache();
+        return bp;
     }
 	
 	/**
