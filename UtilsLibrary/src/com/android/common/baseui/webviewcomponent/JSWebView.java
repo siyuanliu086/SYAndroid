@@ -31,7 +31,7 @@ import android.widget.LinearLayout;
 
 import com.android.common.baseui.views.NumberProgressBar;
 import com.android.common.utils.AttachTool;
-import com.android.common.utils.ToastUtil;
+import com.android.common.utils.toast.ToastUtil;
 import com.common.android.utilslibrary.R;
 import com.java.utils.MD5;
 
@@ -176,7 +176,12 @@ public class JSWebView extends LinearLayout implements
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		for(int i = 0; i < paramStr.length; i ++) {
 			String teamParam = paramStr[i];
-			paramMap.put(teamParam.split("=")[0], teamParam.split("=")[1]);
+			String[] teamParamArr = teamParam.split("=");
+			if(teamParamArr.length == 2) {
+				paramMap.put(teamParamArr[0], teamParamArr[1]);
+			} else {
+				paramMap.put(teamParamArr[0], "");
+			}
 		}
 		return paramMap;
 	}

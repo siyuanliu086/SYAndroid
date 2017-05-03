@@ -18,7 +18,7 @@ import com.android.common.baseui.views.NumberProgressBar;
 import com.android.common.baseui.views.TitleBarView;
 import com.android.common.baseui.webviewcomponent.AttachModel;
 import com.android.common.baseui.webviewcomponent.DownloadUtil;
-import com.android.common.utils.ToastUtil;
+import com.android.common.utils.toast.ToastUtil;
 import com.common.android.utilslibrary.R;
 import com.java.utils.MD5;
 

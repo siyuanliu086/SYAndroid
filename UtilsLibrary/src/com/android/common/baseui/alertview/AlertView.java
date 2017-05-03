@@ -25,7 +25,6 @@ import android.widget.TextView;
 import com.common.android.utilslibrary.R;
 
 /**
- * Created by Sai on 15/8/9.
  * 精仿iOSAlertViewController控件
  * 点击取消按钮返回 －1，其他按钮从0开始算
  */
@@ -66,7 +65,7 @@ public class AlertView {
     private int gravity = Gravity.CENTER;
 
     public AlertView(Builder builder) {
-        this.contextWeak = new WeakReference<>(builder.context);
+        this.contextWeak = new WeakReference<Context>(builder.context);
         this.style = builder.style;
         this.title = builder.title;
         this.msg = builder.msg;
@@ -82,7 +81,7 @@ public class AlertView {
     }
 
     public AlertView(String title, String msg, String cancel, String[] destructive, String[] others, Context context, Style style,OnItemClickListener onItemClickListener){
-        this.contextWeak = new WeakReference<>(context);
+        this.contextWeak = new WeakReference<Context>(context);
         if(style != null)this.style = style;
         this.onItemClickListener = onItemClickListener;
 

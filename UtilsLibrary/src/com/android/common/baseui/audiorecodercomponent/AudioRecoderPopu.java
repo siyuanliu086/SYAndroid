@@ -79,7 +79,7 @@ public class AudioRecoderPopu extends PopupWindow implements OnClickListener, On
 				// 按下，开始录音
 				if(!isRecording) {
 					isRecording = true;
-					mButton.setBackgroundResource(R.drawable.utils_audio_voice_button_start);
+					mButton.setBackgroundResource(R.drawable.utilslib_audio_voice_button_start);
 					record(FLAG_AMR);
 				}
 			} else if(event.getAction() == MotionEvent.ACTION_MOVE) {
@@ -280,7 +280,7 @@ public class AudioRecoderPopu extends PopupWindow implements OnClickListener, On
             case CMD_RECORDFAIL:
                 int vErrorCode = (Integer) msg.obj;
                 String vMsg = ErrorCode.getErrorInfo(activity, vErrorCode);
-                mButton.setBackgroundResource(R.drawable.utils_audio_voice_button_stop);
+                mButton.setBackgroundResource(R.drawable.utilslib_audio_voice_button_stop);
                 infoTextView.setText("");
                 stateTextView.setText("录音失败："+vMsg);
                 if(completedListener != null) {
@@ -296,7 +296,7 @@ public class AudioRecoderPopu extends PopupWindow implements OnClickListener, On
 //            	System.out.println("newFilePath : " + newFilePath);
 //            	File file = new File(filePath);
 //            	file.renameTo(new File(newFilePath));
-            		mButton.setBackgroundResource(R.drawable.utils_audio_voice_button_stop);
+            		mButton.setBackgroundResource(R.drawable.utilslib_audio_voice_button_stop);
             		infoTextView.setText("已录制："+spendTime+" 秒");
             		stateTextView.setText("录音已完成");
             		if(completedListener != null && !stopRecord) {
@@ -305,7 +305,7 @@ public class AudioRecoderPopu extends PopupWindow implements OnClickListener, On
             	}
             	break;
             case CMD_TIME_SHORT:
-            	mButton.setBackgroundResource(R.drawable.utils_audio_voice_button_stop);
+            	mButton.setBackgroundResource(R.drawable.utilslib_audio_voice_button_stop);
             	infoTextView.setText("已录制："+spendTime+" 秒");
             	stateTextView.setText("录音时间太短不可用！按下重新开始");
             	if(completedListener != null) {
@@ -319,7 +319,7 @@ public class AudioRecoderPopu extends PopupWindow implements OnClickListener, On
             		uiThread.stopThread();
             	}
             	
-            	mButton.setBackgroundResource(R.drawable.utils_audio_voice_button_stop);
+            	mButton.setBackgroundResource(R.drawable.utilslib_audio_voice_button_stop);
             	infoTextView.setText("已录制："+spendTime+" 秒");
             	stateTextView.setText("取消录音！");
             	if(completedListener != null) {
@@ -329,7 +329,7 @@ public class AudioRecoderPopu extends PopupWindow implements OnClickListener, On
             case CMD_STOP_RECORD:
             	if(isRecording) {
 					isRecording = false;
-					mButton.setBackgroundResource(R.drawable.utils_audio_voice_button_stop);
+					mButton.setBackgroundResource(R.drawable.utilslib_audio_voice_button_stop);
 					stop();	
 				}
             	break;

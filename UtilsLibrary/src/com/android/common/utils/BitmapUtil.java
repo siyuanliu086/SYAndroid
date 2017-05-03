@@ -19,6 +19,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import com.android.common.utils.toast.ToastUtil;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;

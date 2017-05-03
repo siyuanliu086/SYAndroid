@@ -198,7 +198,11 @@ public class WaterDropView extends View {
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                updateComleteState((float) valueAnimator.getAnimatedValue());
+                try {
+					updateComleteState(Float.valueOf(valueAnimator.getAnimatedValue().toString()));
+				} catch (NumberFormatException e) {
+					e.printStackTrace();
+				}
             }
         });
         return valueAnimator;

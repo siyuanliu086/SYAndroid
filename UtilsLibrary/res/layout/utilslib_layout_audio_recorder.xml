@@ -34,7 +34,7 @@
             android:layout_marginTop="26dp"
             android:padding="20dp"
             android:layout_marginBottom="60dp"
-            android:background="@drawable/utils_audio_voice_button_stop" />
+            android:background="@drawable/utilslib_audio_voice_button_stop" />
     </LinearLayout>
 
 </RelativeLayout>

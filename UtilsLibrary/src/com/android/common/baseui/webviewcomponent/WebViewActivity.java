@@ -31,7 +31,7 @@ import android.widget.LinearLayout;
 import com.android.common.baseui.BaseActivity;
 import com.android.common.baseui.views.NumberProgressBar;
 import com.android.common.utils.AttachTool;
-import com.android.common.utils.ToastUtil;
+import com.android.common.utils.toast.ToastUtil;
 import com.common.android.utilslibrary.R;
 import com.java.utils.MD5;
 

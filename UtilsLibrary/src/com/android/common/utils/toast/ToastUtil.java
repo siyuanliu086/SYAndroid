@@ -1,4 +1,4 @@
-package com.android.common.utils;
+package com.android.common.utils.toast;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -21,7 +21,7 @@ import com.common.android.utilslibrary.R;
 public class ToastUtil {
 
 	/**
-	 * 自定义布局Toast
+	 * 自定义布局Toast(中间显示)
 	 * @param context
 	 * @param msg
 	 */

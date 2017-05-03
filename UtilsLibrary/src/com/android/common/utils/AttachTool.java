@@ -13,6 +13,7 @@ import com.android.common.baseui.videocomponent.VideoActivity;
 import com.android.common.baseui.webviewcomponent.AttachModel;
 import com.android.common.baseui.webviewcomponent.WebViewActivity;
 import com.android.common.imagescan.ImagePagerActivity;
+import com.android.common.utils.toast.ToastUtil;
 import com.common.android.utilslibrary.R;
 
 /**

@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.android.common.imagescan.PhotoViewAttacher.OnPhotoTapListener;
-import com.android.common.utils.ToastUtil;
+import com.android.common.utils.toast.ToastUtil;
 import com.common.android.utilslibrary.R;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.bitmap.BitmapDisplayConfig;

@@ -102,4 +102,7 @@
     <string name="utilslib_audiorecoder_state_record_error">正在录音中，请先停止录音</string>
     <string name="utilslib_audiorecoder_unknown_type">无法识别的错误</string>
     
+    
+    <string name="utilslib_toasty_message">toasty_message</string>
+    
 </resources>
