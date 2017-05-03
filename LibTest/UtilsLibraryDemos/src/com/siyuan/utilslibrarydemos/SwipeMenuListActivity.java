@@ -16,12 +16,13 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.common.baseui.swipemenulistview.SwipeMenu;
 import com.android.common.baseui.swipemenulistview.SwipeMenuCreator;
 import com.android.common.baseui.swipemenulistview.SwipeMenuItem;
 import com.android.common.baseui.swipemenulistview.SwipeMenuListView;
-import com.android.common.utils.ToastUtil;
+import com.android.common.utils.toast.Toasty;
 import com.siyuan.utilslibrarydemos.canlendar.CanlendarMainActivity;
 
 public class SwipeMenuListActivity extends Activity {
@@ -43,7 +44,9 @@ public class SwipeMenuListActivity extends Activity {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				ToastUtil.showShortToast(mContext, position + "onClick");
+//				ToastUtil.showShortToast(mContext, position + "onClick");
+				Toasty.Config.getInstance().setSuccessColor(Color.parseColor("#FF3300")).apply();
+				Toasty.success(mContext, "Success!", Toast.LENGTH_SHORT, true).show();
 			}
 		});
 		// step 1. create a MenuCreator
@@ -172,7 +175,7 @@ public class SwipeMenuListActivity extends Activity {
 			ViewHolder holder = (ViewHolder) convertView.getTag();
 			ApplicationInfo item = getItem(position);
 			holder.iv_icon.setImageDrawable(item.loadIcon(getPackageManager()));
-			holder.tv_name.setText(item.loadLabel(getPackageManager()));
+			holder.tv_name.setText(item.loadLabel(getPackageManager()) + "\n" + item.packageName);
 			return convertView;
 		}
 

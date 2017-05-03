@@ -1,7 +1,6 @@
 package com.siyuan.utilslibrarydemos;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +12,7 @@ import com.android.common.baseui.views.BadgeView;
 import com.android.common.baseui.views.SearchView;
 import com.android.common.utils.DialogUtil;
 import com.android.common.utils.SoftKeyBoardListener;
-import com.android.common.utils.ToastUtil;
+import com.android.common.utils.toast.ToastUtil;
 import com.siyuan.utilslibrarydemos.canlendar.CanlendarMainActivity;
 
 public class MainActivity extends Activity {
